@@ -1,0 +1,39 @@
+.note{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #fff;
+    width: 16rem;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgb(175, 175, 175);
+    padding: 10px;
+    margin: 16px;
+    float: left;
+    padding: 1rem;
+}
+.note h1{
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+.note p{
+    font-size: 1rem;
+    color: #6f212b;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.note button{
+    position: relative;
+    float: right;
+    color: #3B3B3B;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+.cardicon button:hover{
+    background: #ffffff;
+    border-radius: 50%;
+    height:30px;
+    width:30px;
+}

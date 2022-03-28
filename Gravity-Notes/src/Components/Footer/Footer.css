@@ -1,0 +1,19 @@
+.footer {
+    margin-right: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 5rem;
+    font-size: large;
+  }
+  footer {
+    background-color: var(--backgorund-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .footer-txt {
+    color: var(--text-color);
+  }
