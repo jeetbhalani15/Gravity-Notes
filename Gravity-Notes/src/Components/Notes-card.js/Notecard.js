@@ -5,11 +5,11 @@ import {BiImage} from "react-icons/bi"
 import {BiArchiveIn} from "react-icons/bi"
 import {MdMoreVert} from "react-icons/md"
 import "./Notecard.css";
-export const Notecard = ()=>{
+export const Notecard = ({title, content, key})=>{
     return(
-        <div className='note'>
-            <h1>title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam architecto aperiam corporis illo quisquam ipsa sapiente? Temporibus architecto, facere nesciunt consequuntur cum dolorum molestias sint dignissimos! Placeat quas mollitia maiores quaerat corporis debitis vel eum, officiis temporibus molestiae, cupiditate magni sit sunt odio natus vitae</p>
+        <div className='note' key={key}>
+            <h1>{title}</h1>
+            <p>{content}</p>
             <div className="cardicon">
                 <button><MdMoreVert size={25} /></button>
                 <button onClick={() => onDelete(id)}><MdDelete size={25} /></button>

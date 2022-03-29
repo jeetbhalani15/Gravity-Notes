@@ -34,7 +34,7 @@
     display: flex;
     font-size: 13px;
     flex-flow: row-reverse;
-    color: #ff6a00;
+    color: orange
 }
 .search{
     display: flex;
