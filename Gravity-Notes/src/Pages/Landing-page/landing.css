@@ -242,7 +242,6 @@ h1, p{
 
 }
 .action-links{
-    color: var(--text-color);
     font-size: 1.5rem;
 }
 .action-links:hover{

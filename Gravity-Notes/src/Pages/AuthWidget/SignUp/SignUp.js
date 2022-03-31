@@ -148,7 +148,7 @@ export function SignUp() {
         });
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
-        navigate("/ProductListing");
+        navigate("/home");
         console.log(formState.password)
         alert("Account Made Successfully!!!");
       } catch (err) {

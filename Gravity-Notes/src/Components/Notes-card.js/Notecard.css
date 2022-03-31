@@ -32,9 +32,10 @@
     outline: none;
 }
 .cardicon{
-    display: flex;
     background: #ffffff;
     border-radius: 50%;
     height:30px;
-    width:30px;
 }
+.title-txt{
+    color: #3B3B3B;
+} 
