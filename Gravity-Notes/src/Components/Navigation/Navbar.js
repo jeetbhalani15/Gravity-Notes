@@ -16,7 +16,7 @@ export const Navbar = ()=>{
     return(
         <>
         <div className='header'>
-            <button className='widget3'><a href="#"><FcMenu size={30}/></a></button>
+            <button className='nav-btn widget3'><a href="#"><FcMenu size={30}/></a></button>
             <div className="hero-logo">
           <div className="logo-mg">
             <img className="logo-img" src={logo} alt="logo" />
@@ -35,13 +35,13 @@ export const Navbar = ()=>{
                 
             </div>
             <div className="widgets">
-                <div className="refresh my-3"><button> <a href="#"> <MdRefresh size={30}/></a></button></div>
-                <div className="view my-3 "><button><a href="#"><MdGridView size={30}/></a></button></div>
-                <div className="settings my-3 "><button><a href="#"><IoSettingsOutline size={30}/></a></button></div>
+                <div className="refresh my-3"><button className='nav-btn'> <a href="#"> <MdRefresh size={30}/></a></button></div>
+                <div className="view my-3 "><button className='nav-btn'><a href="#"><MdGridView size={30}/></a></button></div>
+                <div className="settings my-3 "><button className='nav-btn'><a href="#"><IoSettingsOutline size={30}/></a></button></div>
             </div>
             <div className="widgets2">
-                <div className="drive"><button><a href="#"><IoApps size={30}/></a></button></div>
-                <div className="logo"><button><a href="#"><MdOutlineAccountCircle size={30}/></a></button></div>
+                <div className="drive"><button className='nav-btn'><a href="#"><IoApps size={30}/></a></button></div>
+                <div className="logo"><button className='nav-btn'><a href="#"><MdOutlineAccountCircle size={30}/></a></button></div>
             </div>
         </div>
     </>
