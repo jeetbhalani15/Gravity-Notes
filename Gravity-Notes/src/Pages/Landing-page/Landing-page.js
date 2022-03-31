@@ -44,7 +44,7 @@ return(
                     <h1 className="heading-txt"> <span className="word-color">Create.</span> Organize. Share. Easy. </h1>
                     <p>Notes is the best place to jot down quick thoughts or to save longer filled with checklists, images, web links, scanned Docs, Handwritten notes.</p>
                     <div className="cta-btn">
-                       <Link to="/home"> <button className="btn">Join Now</button></Link>
+                       <Link to="/login"> <button className="btn">Join Now</button></Link>
                     </div>
                     <div className="login-btn">
                         {/* <button className="aha-btn">Already have Account </button> */}
