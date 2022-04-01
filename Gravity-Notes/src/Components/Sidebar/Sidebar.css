@@ -10,13 +10,9 @@
     top: 80%;
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
-    /* visibility: hidden; */
- 
 }
  .tag:hover{
      visibility: visible;
-   /* transform: translateX(80%);   */
-
 }
 .badge{
     top: -6%;
@@ -25,9 +21,7 @@
     border: 1px solid black;
     background-color: #a09e9d;
     border-radius: 73%;
-    /* padding: 0.245rem 1.025rem; */
     font-size: 14px;
     padding: 0.017rem 0.445rem;
-    /* top: -18%; */
     right: 6%;
 }
