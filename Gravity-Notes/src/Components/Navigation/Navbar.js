@@ -7,6 +7,7 @@ import {IoSettingsOutline} from "react-icons/io5";
 import {IoApps} from "react-icons/io5";
 import {MdOutlineAccountCircle} from "react-icons/md"
 import logo from "../../Assets/Images/hero-logo.png"
+import {Link} from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -41,7 +42,7 @@ export const Navbar = ()=>{
             </div>
             <div className="widgets2">
                 <div className="drive"><button className='nav-btn'><a href="#"><IoApps size={30}/></a></button></div>
-                <div className="logo"><button className='nav-btn'><a href="#"><MdOutlineAccountCircle size={30}/></a></button></div>
+                <div className="logo"><Link to={"/login"}> <button className='nav-btn'><a href="#"><MdOutlineAccountCircle size={30}/></a></button></Link></div>
             </div>
         </div>
     </>

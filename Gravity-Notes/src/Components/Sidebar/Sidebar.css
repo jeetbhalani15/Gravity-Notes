@@ -1,0 +1,27 @@
+.item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag{
+    font-size: small;
+    position: absolute;
+    top: 80%;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+}
+ .tag:hover{
+     visibility: visible;
+}
+.badge{
+    top: -6%;
+    color: white;
+    position: absolute;
+    border: 1px solid black;
+    background-color: #a09e9d;
+    border-radius: 73%;
+    font-size: 14px;
+    padding: 0.017rem 0.445rem;
+    right: 6%;
+}

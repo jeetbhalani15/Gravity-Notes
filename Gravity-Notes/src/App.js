@@ -9,6 +9,8 @@ import { SignUp } from "./Pages/AuthWidget/SignUp/SignUp";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { Landingpage } from "./Pages/Landing-page/Landing-page";
 import Mockman from "mockman-js";
+import { Archive } from "./Pages/Archive/Archive-page";
+
 
 
 
@@ -21,6 +23,7 @@ function App() {
        <Route  path="/home" element={  <Homepage/>}/>
        <Route  path="/login" element={  <Login/>}/>
        <Route  path="/signup" element={ <SignUp/>}/>
+       <Route  path="/archive" element={ <Archive/>}/>
        <Route  path="/mock" element={<Mockman/>}/>
      </Routes>
    </>

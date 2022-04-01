@@ -4,34 +4,30 @@ import {HiOutlineUserAdd} from "react-icons/hi"
 import {BiImage} from "react-icons/bi"
 import {BiArchiveIn} from "react-icons/bi"
 import {MdMoreVert} from "react-icons/md"
-import "./Notecard.css";
+import {BiEditAlt} from "react-icons/bi"
 import { useAuth } from "../../Contexts/Auth-context"
 import { useNotes } from "../../Contexts/NotesAction-context"
-import axios from "axios"
-
-
-
+import { deleteNote } from "../../Utils/DeleteNote"
+import { archiveNote } from "../../Utils/ArchiveNote"
+import "./Notecard.css";
 
 export const Notecard = ({note})=>{
-    const {authState} = useAuth();
-    const {noteDispatch} = useNotes();
 
-    const deleteNote = async (item)=>{
-        console.log("delete")
-        console.log(authState.token)
-        console.log(item._id)
-        try {
-            
-            const res = await axios.delete(`/api/notes/${item._id}`, { headers : { authorization : authState.token}})
-            console.log(res)
-            if(res.status === 200){
-                noteDispatch({type:"DELETE_NOTES", payload: res.data.notes})
-            }
-            
-        } catch (error) {
-            console.log(error)
-        }
-     }
+   
+    const {authState} = useAuth();
+    const {noteDispatch, setNote} = useNotes();
+
+    const editHandler = async (note)=>{
+         setNote((pre =>({...pre,
+            title: note.title,
+            content: note.content,
+            id: note._id,
+            flag: true,
+            date: new Date(Date.now()).toLocaleString().split(','[0])
+         })))
+    }
+
+   
     return(
         <div className='note'>
             <div className="title-box">
@@ -41,9 +37,9 @@ export const Notecard = ({note})=>{
             <p>{note.content}</p>
             <div className="cardicon">
                 <button><MdMoreVert size={25} /></button>
-                <button onClick={() => deleteNote(note) }><MdDelete size={25} /></button>
-                <button><BiImage size={25} /></button>
-                <button><BiArchiveIn size={25} /></button>
+                <button onClick={() => deleteNote(note,authState,noteDispatch) }><MdDelete size={25} /></button>
+                <button onClick={() => editHandler(note)}><BiEditAlt size={25} /></button>
+                <button onClick={() => archiveNote(note,authState,noteDispatch) }><BiArchiveIn size={25} /></button>
                 <button><HiOutlineUserAdd size={24} /></button>
                 <button><BiBellPlus size={25} /></button>
             </div>
