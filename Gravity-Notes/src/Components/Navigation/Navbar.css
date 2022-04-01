@@ -166,11 +166,10 @@ input{
     background-color: white;
 }
 .headermenu button:hover{
-    background: rgb(248, 225, 182);
+    transform: scale(1.09);
 }
 .cardicon button:hover{
     background: #ffffff;
     border-radius: 50%;
     height:30px;
-    width:30px;
 }

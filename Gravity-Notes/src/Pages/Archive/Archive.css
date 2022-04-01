@@ -1,0 +1,14 @@
+.archive-heading{
+    font-family: cursive; 
+    margin-right: 14rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid grey;
+}
+.txt-color{
+    color: #7e7777;
+}
+.archive-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

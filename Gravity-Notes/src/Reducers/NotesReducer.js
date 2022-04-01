@@ -4,6 +4,14 @@ export const notesReducer =(state,{type,payload})=>{
                 return {...state, notes: payload}
             case "DELETE_NOTES":
                 return {...state, notes: payload}
+            case "EDIT_NOTE":
+                return {...state, notes: payload}
+            case "ARCHIVE_NOTE":
+                return {...state, notes: payload.notes, archives: payload.archives}
+            case "RESTORE_ARCHIVE_NOTE":
+                return {...state, notes: payload.notes, archives: payload.archives}
+            case "DELETE_ARCHIVE_NOTE":
+                return {...state, archives: payload}
                 
             
         
