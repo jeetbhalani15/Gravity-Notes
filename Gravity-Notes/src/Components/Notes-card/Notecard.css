@@ -1,9 +1,10 @@
 .note{
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     background: #fff;
-    width: 16rem;
+    width: fit-content;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgb(175, 175, 175);
     padding: 10px;
@@ -21,6 +22,7 @@
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    padding: 1rem;
 }
 .note button{
     position: relative;
@@ -30,6 +32,7 @@
     background: none;
     cursor: pointer;
     outline: none;
+    padding: 3px;
 }
 .cardicon{
     background: #ffffff;
@@ -39,3 +42,7 @@
 .title-txt{
     color: #3B3B3B;
 } 
+/* .title-box{
+    display: flex;
+    gap: 9rem;
+} */
