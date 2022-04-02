@@ -8,7 +8,7 @@ import axios from "axios";
      const res = await axios.post("/api/notes", { note }, { headers : {authorization: authState.token}});
      
      if(res.status === 201){
-       setNote(pre =>({...pre, title: "", content: ""}));
+       setNote(pre =>({...pre, title: "", content: "", color:""}));
        noteDispatch({type : "ADD_NOTES", payload: res.data.notes});
      }
      

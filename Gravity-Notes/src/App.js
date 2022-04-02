@@ -10,6 +10,7 @@ import { Homepage } from "./Pages/Homepage/Homepage";
 import { Landingpage } from "./Pages/Landing-page/Landing-page";
 import Mockman from "mockman-js";
 import { Archive } from "./Pages/Archive/Archive-page";
+import { Trash } from "./Pages/Trash-page/Trash";
 
 
 
@@ -24,6 +25,7 @@ function App() {
        <Route  path="/login" element={  <Login/>}/>
        <Route  path="/signup" element={ <SignUp/>}/>
        <Route  path="/archive" element={ <Archive/>}/>
+       <Route  path="/trash" element={ <Trash/>}/>
        <Route  path="/mock" element={<Mockman/>}/>
      </Routes>
    </>

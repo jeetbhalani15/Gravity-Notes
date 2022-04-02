@@ -16,19 +16,19 @@ export const ArchiveCard = ({ archive })=>{
     const { noteDispatch } = useNotes();
     const {authState} = useAuth();
     return(
-        <div className='note'>
+        <div className={`note ${archive.color}`}>
         <div className="title-box">
         <h1 className="title-txt">{archive.title}</h1>
         <small>{archive.data}</small>
         </div>
         <p>{archive.content}</p>
-        <div className="cardicon">
-            <button><MdMoreVert size={25} /></button>
-            <button onClick={() => deleteFromArchive(archive,authState,noteDispatch) }><MdDelete size={25} /></button>
-            <button onClick={() => restoreArchiveNote(archive,authState,noteDispatch) }><BiArchiveOut size={25} /></button>
+        <div className={`cardicon ${archive.color}`}>
+            <button className="card-action-btn"><MdMoreVert size={25} /></button>
+            <button className="card-action-btn" onClick={() => deleteFromArchive(archive,authState,noteDispatch) }><MdDelete size={25} /></button>
+            <button className="card-action-btn" onClick={() => restoreArchiveNote(archive,authState,noteDispatch) }><BiArchiveOut size={25} /></button>
             {/* <button onClick={() => editHandler(note)}><BiEditAlt size={25} /></button> */}
-            <button><HiOutlineUserAdd size={24} /></button>
-            <button><BiBellPlus size={25} /></button>
+            <button className="card-action-btn"><HiOutlineUserAdd size={24} /></button>
+            <button className="card-action-btn"><BiBellPlus size={25} /></button>
         </div>
     </div>
     );

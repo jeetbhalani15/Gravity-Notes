@@ -24,7 +24,7 @@
     word-wrap: break-word;
     padding: 1rem;
 }
-.note button{
+.card-action-btn{
     position: relative;
     float: right;
     color: #3B3B3B;
@@ -42,3 +42,52 @@
 .title-txt{
     color: #3B3B3B;
 } 
+.card-color-box{
+    display: flex;
+    width: fit-content;
+    gap: 1rem;  
+    padding: 1rem;  
+}
+.card-color-btn{
+    background: none;
+    border-radius: 50%;
+    border: 2px solid grey;
+    padding: 8px;
+    font-size: 0px;
+}
+.red{
+    background-color: #ff7c7c;
+}
+.orange{
+    background-color: #ffa05c;
+}
+.yellow{
+    background-color: #f3e67a;
+}
+.green{
+    background-color: #9eef9a;
+}
+.blue{
+    background-color: #8fa8f6;
+}
+.pink{
+    background-color: #f195d0;
+}
+.purple{
+    background-color: #a976fa;
+}
+.pink{
+    background-color: #f195d0;
+}
+.brown{
+    background-color: #afafaffc;
+}
+.card-pointer{
+    position: absolute;
+    bottom: 18%;
+    left: 53.5%;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #c1b5b5;
+    font-family: cursive;  
+}

@@ -6,11 +6,11 @@ import axios from "axios"
     try {
         
 
-        const res = await axios.post(`/api/notes/${note.id}`, { note }, { headers : { authorization: authState.token } }); 
+        const res = await axios.post(`/api/notes/${note._id}`, { note }, { headers : { authorization: authState.token } }); 
         
         
             noteDispatch({type : "EDIT_NOTE", payload : res.data.notes });
-            setNote(pre => ({ ...pre, title : "", content : "", flag: false  }));
+            setNote(pre => ({ ...pre, title : "", content : "", color:"", flag: false  }));
         
 
         
