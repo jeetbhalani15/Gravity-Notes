@@ -5,9 +5,10 @@ import "./Archive.css";
 import { Footer } from "../../Components/Footer/Footer";
 import { ArchiveCard } from "../../Components/Archive-card/ArchiveCard";
 import { useNotes } from "../../Contexts/NotesAction-context";
+import { MdOutlineArchive } from "react-icons/md";
 
 export const Archive = () => {
-    const {noteState} = useNotes();
+  const { noteState } = useNotes();
   return (
     <>
       <Navbar />
@@ -16,11 +17,25 @@ export const Archive = () => {
         <div className="content">
           <div className="archive-content">
             <div className="archive-heading">
-              <h1 className="txt-color">Archive({noteState.archives.length})</h1>
+              <h1 className="txt-color">
+                Archive({noteState.archives.length})
+              </h1>
             </div>
-            {console.log(noteState.archives)}
-            {noteState.archives.map((item)=><ArchiveCard key={item._id} archive={item}/>)}
           </div>
+          {noteState.archives.length === 0 ? (
+            <>
+              <div className="no-note-txt">
+                <MdOutlineArchive color="grey" size={175} />
+                <p className="no-note-pra">Your archived notes appear here</p>
+              </div>
+            </>
+          ) : (
+            <>
+              {noteState.archives.map((item) => (
+                <ArchiveCard key={item._id} archive={item} />
+              ))}
+            </>
+          )}
         </div>
       </div>
       <Footer />
