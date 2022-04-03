@@ -9,15 +9,27 @@ import axios from "axios";
 import "./Textarea.css";
 import { addNoteHandler } from "../../Utils/AddNote";
 import { editNote } from "../../Utils/EditNote";
-import { MdOutlineTerrain } from "react-icons/md";
+import { MdInvertColorsOff, MdOutlineColorLens, MdOutlineFormatColorReset } from "react-icons/md";
+import { IoColorPaletteSharp } from "react-icons/io5";
+import { BiTagAlt } from "react-icons/bi";
 
 export const Textarea = () => {
   const {authState} = useAuth();
   const {noteState, noteDispatch,note,setNote} = useNotes();
   const [isExpanded, setisExpanded] = useState(false);
+  const [colorSelector, setColorSelector] = useState(false);
 
   const inputHandler = (e)=>{
       setNote(pre=>({...pre,[e.target.name]:e.target.value, data: new Date(Date.now()).toLocaleString().split(','[0])}))
+  }
+
+  const userColorSelector = (color)=>{
+    setNote((pre)=>({...pre, color: color}))
+
+  }
+
+  const showColorSelector = (note)=>{
+    setColorSelector(pre => !pre)
   }
 
   // handle expand of textbox on click
@@ -39,8 +51,8 @@ export const Textarea = () => {
  return (
     // Textarea Component
     <div>
-      <form onSubmit={(e)=> submitHandler(e)} className="textarea-form">
-        {isExpanded && (<input
+      <form onSubmit={(e)=> submitHandler(e)} className={`textarea-form ${note.color}`}>
+        {isExpanded && (<input className={note.color}
             value={note.title}
             type="text"
             placeholder="Title"
@@ -50,7 +62,7 @@ export const Textarea = () => {
           />
         )}
         <p>
-          <textarea
+          <textarea className={note.color}
             value={note.content}
             onChange={inputHandler}
             name="content"
@@ -58,15 +70,19 @@ export const Textarea = () => {
             rows={isExpanded ? 3 : 1}
             onClick={handleExpand}
             required
-          ></textarea>
+            > </textarea>
+            <div className="action-btn">
+                {isExpanded ? <IoColorPaletteSharp onClick={showColorSelector} className="color-selector-btn" color="grey" size={25} /> : null }
+                {isExpanded ? <BiTagAlt className="color-selector-btn" color="grey" size={25} /> : null }
+            </div>
         </p>
         {note.flag 
          ? 
-           <button >
+         <button >
           <GrUpdate color="white" size={20} />
           </button>
          :
-          <button >
+         <button >
           <IoIosAdd size={35} />
           </button>
          }
@@ -74,11 +90,24 @@ export const Textarea = () => {
 
       </form>
 
+      {/* COLOR SELECTOR BOX */}
+      {colorSelector
+       && 
+      <div className="color-box">
+        <span className="pointer">^</span>
+      <button onClick={()=>userColorSelector("")} className="color-btn"> <MdOutlineFormatColorReset size={12}/>  </button>
+      <button onClick={()=>userColorSelector("red")} className="color-btn red"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("orange")} className="color-btn orange"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("yellow")} className="color-btn yellow"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("green")} className="color-btn green"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("purple")} className="color-btn purple"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("pink")} className="color-btn pink"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+      <button onClick={()=>userColorSelector("brown")} className="color-btn brown"> <MdOutlineFormatColorReset size={12}  visibility={"hidden"} />  </button>
+    </div> }
+    
     {/* Note card component */}
 
-          {/* {console.log(noteState.notes)}
-          {console.log(noteState)}
-           */}
+          
       {noteState.notes.map((item)=>(<Notecard key={item._id} note={item}/>))}
       
   
