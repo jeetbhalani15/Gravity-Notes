@@ -89,7 +89,6 @@
     top: 38%;
     right: 43%;
     display: flex;
-    width: -moz-fit-content;
     width: fit-content;
     gap: 0.5rem;
     box-shadow: 0 1px 5px rgb(128 128 128);
