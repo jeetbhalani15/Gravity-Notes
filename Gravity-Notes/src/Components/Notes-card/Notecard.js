@@ -46,7 +46,7 @@ export const Notecard = ({note})=>{
             <h1 className="title-txt">{note.title}</h1>
             <small>{note.data}</small>
             </div>
-            <p>{note.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: note.content}}/>
             <div className={`cardicon ${note.color}`}>
                 <button className="card-action-btn"><MdMoreVert size={25} /></button>
                 <button className="card-action-btn" onClick={() => deleteNote(note,authState,noteDispatch) }><MdDelete size={25} /></button>

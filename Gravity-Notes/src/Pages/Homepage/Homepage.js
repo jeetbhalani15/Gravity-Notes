@@ -8,6 +8,8 @@ export const Homepage = ()=>{
         <Navbar/>
         <Bodycontent/>
         <Footer/>
+       
+      
         </>
     );
 }

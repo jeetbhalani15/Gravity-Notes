@@ -21,7 +21,7 @@ export const ArchiveCard = ({ archive })=>{
         <h1 className="title-txt">{archive.title}</h1>
         <small>{archive.data}</small>
         </div>
-        <p>{archive.content}</p>
+        <p dangerouslySetInnerHTML={{ __html: archive.content}}/>
         <div className={`cardicon ${archive.color}`}>
             <button className="card-action-btn"><MdMoreVert size={25} /></button>
             <button className="card-action-btn" onClick={() => deleteFromArchive(archive,authState,noteDispatch) }><MdDelete size={25} /></button>

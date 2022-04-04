@@ -30,7 +30,7 @@ a{
 }
 li{
     list-style: none;
-    color: var(--text-color);
+    color: black
 }
 .big-wrapper{
     position: relative;
@@ -62,7 +62,6 @@ li{
 }
 .container{
     position: relative;
-    /* background-color: salmon; */
     max-width: 90rem;
     width: 100%;
     margin: 0 auto;
@@ -92,7 +91,7 @@ header .container{
     align-items: center;
 }
 .links a{
-    color: var(--text-color);
+    color: black;
     margin-left: 4.5rem;
     display: inline-block;
     transform: 0.3s;
@@ -171,7 +170,7 @@ header .container{
     line-height: 1.4;
 }
 h1, p{
-    color: var(--text-color);
+    color: black
 }
 .btn{
     display: inline-block;

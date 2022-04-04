@@ -24,7 +24,7 @@
     font-size: 1rem;
     resize: none;
 }
-.textarea-form button{
+.add-note-btn{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -42,10 +42,12 @@
     outline: none;
 }
 
-.color-selector-btn:hover{
-    transform: scale(1.09);
-}
+/* .color-selector-btn:hover{
+    transform: scale(1.02);
+} */
 .action-btn{
+    bottom: 4%;
+    position: absolute;
     margin-left: 1rem;
     display: flex;
     gap: 1rem;
@@ -86,7 +88,7 @@
 }
 .color-box{
     position: absolute;
-    top: 38%;
+    bottom: 41.5%;
     right: 43%;
     display: flex;
     width: fit-content;
@@ -104,4 +106,22 @@
     color: #c1b5b5;
     font-family: cursive;
     
+}
+.quill-editor{
+    height: 8rem;
+    color: black;
+}
+.no-note-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    margin-right: 13rem;
+    opacity: 0.3;
+}
+.no-note-pra{
+    font-size: 2rem;
+    font-weight: 600;
+    color: grey;
 }
