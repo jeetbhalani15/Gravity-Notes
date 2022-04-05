@@ -22,9 +22,9 @@ return(
         </div>
                 <div className="links">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="/Documentation/main.html">Docs</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li className="nav-btn-txt">Home</li>
+                        <li className="nav-btn-txt">Docs</li>
+                        <li className="nav-btn-txt">About Us</li>
                         <li><button className="toggle-btn">
                             <i className="fa fa-moon-o"></i>
                             <i className="fa fa-sun-o"></i>
@@ -42,7 +42,7 @@ return(
             <div className="container">
                 <div className="big-title">
                     <h1 className="heading-txt"> <span className="word-color">Create.</span> Organize. Share. Easy. </h1>
-                    <p>Notes is the best place to jot down quick thoughts or to save longer filled with checklists, images, web links, scanned Docs, Handwritten notes.</p>
+                    <p className="hero-txt">Notes is the best place to jot down quick thoughts or to save longer filled with checklists, images, web links, scanned Docs, Handwritten notes.</p>
                     <div className="cta-btn">
                        <Link to="/login"> <button className="btn">Join Now</button></Link>
                     </div>

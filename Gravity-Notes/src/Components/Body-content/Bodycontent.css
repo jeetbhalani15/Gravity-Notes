@@ -1,7 +1,12 @@
 .content{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: 12rem;
+}
+.body-content{
+  display: grid;
+  grid-template-columns: 10rem 90rem; 
 }

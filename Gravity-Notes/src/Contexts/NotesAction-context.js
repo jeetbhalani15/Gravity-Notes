@@ -5,13 +5,13 @@ const notesContext = createContext();
 const NotesProvider =({children})=>{
 
     // useState For Note Array
-    const [note,setNote] = useState({title:'', content:'', date:'', _id: "", color:"", flag: false });
+    const [note,setNote] = useState({title:'', content:'', date:'', _id: "", color:"", tags:[], flag: false });
 
     // useState For Colors Array
     const [color, setColor] = useState('');
      
     // useReducer For Note Actions
-    const [noteState, noteDispatch] = useReducer( notesReducer ,{notes: [], archives: [], trashNotes:[], date: ''})
+    const [noteState, noteDispatch] = useReducer( notesReducer ,{notes: [], archives: [], trashNotes:[], date: '', })
     console.log(noteState.notes)
  return(
      <notesContext.Provider value={{noteState, noteDispatch, note, setNote, color, setColor}}>

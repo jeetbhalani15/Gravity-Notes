@@ -18,13 +18,11 @@ export const notesReducer =(state,{type,payload})=>{
                 return {...state, trashNotes: state.trashNotes.filter((item)=> item._id !== payload._id) }
             case "RESTORE_FROM_TRASH":
                 return {...state, trashNotes: state.trashNotes.filter((item)=> item._id !== payload._id)}
-                
-            
-        
+            case "ADD_LABEL":
+                return {...state, label: [...state.label, payload ]}      
             default:
                 return{...state};
         }
     
 }  
 
-// const deleteNotes = state.notes.filter((item)=> item._id !== payload._id)

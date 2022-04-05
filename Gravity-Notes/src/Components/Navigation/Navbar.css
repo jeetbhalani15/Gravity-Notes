@@ -123,18 +123,8 @@ a:hover {
     background: #ebebeb;
     border-radius: 50%;
 }
-input{
-    border: none;  
-    outline: none;  
-}
+
 .headermenu{
-    position: fixed;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: flex-end;
-    justify-content: space-evenly;
-    align-items: baseline;
     width: 5rem;
 }
 .headermenu div{

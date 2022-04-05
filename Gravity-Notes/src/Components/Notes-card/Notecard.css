@@ -4,7 +4,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     background: #fff;
-    width: fit-content;
+    width: 26rem;
+    height: fit-content;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgb(175, 175, 175);
     padding: 10px;
@@ -54,6 +55,7 @@
     border: 2px solid grey;
     padding: 8px;
     font-size: 0px;
+    cursor: pointer;
 }
 .red{
     background-color: #ff7c7c;
@@ -84,10 +86,47 @@
 }
 .card-pointer{
     position: absolute;
-    bottom: 18%;
+    bottom: 12%;
     left: 53.5%;
     font-size: 2rem;
     font-weight: 500;
     color: #c1b5b5;
     font-family: cursive;  
+}
+.note-lable-container{
+    display: flex;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 5px rgb(128 128 128);
+}
+.note-tag-input{
+    display: flex;
+    align-items: center;
+}
+.note-tag-btn{
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: #bfbfbf;
+    margin-left: -2rem;   
+}
+.chips{
+    background-color: #c9c9c9;
+    width: fit-content;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+}
+.tag-chips{
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    width: 24rem;
+    padding: 1rem;
+}
+.delete-chip-btn{
+    font-size: 1rem;
+    cursor: pointer;
 }
