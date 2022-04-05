@@ -1,0 +1,12 @@
+.tag-container{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    
+}
+.tag-logo{
+    color: grey;
+    font-family: cursive;
+}

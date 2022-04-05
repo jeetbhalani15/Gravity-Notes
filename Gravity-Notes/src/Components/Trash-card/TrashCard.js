@@ -6,7 +6,7 @@ import { addNoteHandler } from "../../Utils/AddNote";
 
 export const TrashCard = ({trash})=>{
     
-    const { noteDispatch, setNote } = useNotes();
+    const { noteDispatch, note, setNote } = useNotes();
     const {authState} = useAuth();
 
     const deleteFromTrash = (note)=>{
@@ -26,6 +26,22 @@ export const TrashCard = ({trash})=>{
             <small>{trash.data}</small>
             </div>
             <p dangerouslySetInnerHTML={{ __html: trash.content}}/>
+
+            <div className="tag-chips">
+        {note.tags.map((item) => (
+          <div key={item} className="chips">
+            <span>{item} </span>
+            <span
+              onClick={() =>
+                deleteChip(item, note, authState, noteDispatch, setNote)
+              }
+              className="delete-chip-btn"
+            >
+              &times;
+            </span>
+          </div>
+        ))}
+      </div>
             <div className={`cardicon ${trash.color}`}>
                 <button className="card-action-btn" onClick={()=> deleteFromTrash(trash)} ><MdDelete size={25} /></button>
                 <button className="card-action-btn" onClick={(e)=> restoreFromTrash(e,trash)}><FaTrashRestore size={25} /></button>
