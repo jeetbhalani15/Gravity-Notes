@@ -1,18 +1,10 @@
-import { FaTrashRestore } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { useAuth } from "../../Contexts/Auth-context";
-import { useNotes } from "../../Contexts/NotesAction-context";
-import { addNoteHandler } from "../../Utils/AddNote";
+import { useNotes } from "../../Contexts/NotesAction-context"
 
 export const TagCard = ({tag})=>{
     
     const { noteDispatch, setNote,note } = useNotes();
     const {authState} = useAuth();
-
-    // const deleteFromTrash = (tag)=>{
-    //    setNote(note.tags.filter((item)=> item._id !== tag._id))
-
-    // };
     
     return(
             <div className={`note ${tag.color}`}>
