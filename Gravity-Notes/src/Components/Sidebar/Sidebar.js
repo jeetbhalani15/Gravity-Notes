@@ -47,8 +47,10 @@ export const Sidebar = ()=>{
                 <span  className="tag" >Achieve</span><span className="badge">{noteState.archives.length}</span>
             </div>
             <div className="item">
+                <Link to={"/trash"}>
                 <button className="sidebar-btn" ><a href="#"><VscTrash size={30}/></a></button>
-                <span  className="tag">Trash</span>
+                </Link>
+                <span  className="tag">Trash</span><span className="badge">{noteState.trashNotes.length}</span>
             </div>
         </div>
         </>
