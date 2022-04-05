@@ -11,6 +11,7 @@ export const TagCard = ({tag})=>{
             <div className="title-box">
             <h1 className="title-txt">{tag.title}</h1>
             <small>{tag.data}</small>
+            <span className={`priority-tag-${tag.priority} && ${tag.priority}`}>{tag.priority}</span>
             </div>
             <p dangerouslySetInnerHTML={{ __html: tag.content}}/>
             <div className={`cardicon ${tag.color}`}>

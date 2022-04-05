@@ -77,6 +77,10 @@ export const Notecard = ({ note }) => {
     const newData = {...note, tags: deletedChip};
     editNote(newData, authState, noteDispatch, setNote);
 }
+const addPriority =(e)=>{
+  const priorityAdded = {...note, priority: e.target.value};
+  editNote(priorityAdded,authState,noteDispatch,setNote)
+}
 
   return (
     <div className={`note ${note.color}`}>
@@ -84,6 +88,7 @@ export const Notecard = ({ note }) => {
         <h1 className="title-txt">{note.title}</h1>
         <small>{note.data}</small>
       </div>
+      <span className={`priority-tag-${note.priority} && ${note.priority}`}>{note.priority}</span>
       <p dangerouslySetInnerHTML={{ __html: note.content }} />
       
       <div className="tag-chips">
@@ -131,6 +136,11 @@ export const Notecard = ({ note }) => {
         <button className="card-action-btn" onClick={() => toggleLabel()}>
           <BiTagAlt size={25} />
         </button>
+        <select onChange={(e)=>addPriority(e)} name="" id="priority" value={note.priority}>
+          <option value={"High"}>High</option>
+          <option value={"Medium"}>Medium</option>
+          <option value={"Low"}>Low</option>
+        </select>
       </div>
 
 

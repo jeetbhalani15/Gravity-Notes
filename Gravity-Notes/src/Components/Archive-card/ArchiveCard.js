@@ -20,6 +20,7 @@ export const ArchiveCard = ({ archive })=>{
         <div className="title-box">
         <h1 className="title-txt">{archive.title}</h1>
         <small>{archive.data}</small>
+        <span className={`priority-tag-${archive.priority} && ${archive.priority}`}>{archive.priority}</span>
         </div>
         <p dangerouslySetInnerHTML={{ __html: archive.content}}/>
 
