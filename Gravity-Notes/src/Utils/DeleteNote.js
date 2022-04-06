@@ -1,6 +1,6 @@
 import axios from "axios"
 
-  export const deleteNote = async (item,authState,noteDispatch, setNote)=>{
+  export const deleteNote = async (item,authState,noteDispatch, setNote, setFilter)=>{
     console.log("delete")
     console.log(authState.token)
     console.log(item._id)
@@ -12,6 +12,8 @@ import axios from "axios"
             noteDispatch({type:"DELETE_NOTES", payload: res.data.notes})
             noteDispatch({type: "TRASH_NOTE", payload: item})
             setNote((pre)=>({...pre, title:'', content: '', flag: false}))
+            setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+            noteDispatch({type:"CLEAR_FILTER"});
         }
         
     } catch (error) {

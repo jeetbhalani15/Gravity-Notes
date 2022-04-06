@@ -15,7 +15,7 @@ import axios from "axios"
 
         
     } catch (error) {
-        alert(error);
+        return
        
     }
 }
