@@ -5,7 +5,7 @@ const notesContext = createContext();
 const NotesProvider =({children})=>{
 
     // useState For Note Array
-    const [note,setNote] = useState({title:'', content:'', date:'', _id: "", color:"", tags:[], flag: false });
+    const [note,setNote] = useState({title:'', content:'', date:'', _id: "", color:"", priority:"", tags:[], flag: false });
 
     // useState For Colors Array
     const [color, setColor] = useState('');

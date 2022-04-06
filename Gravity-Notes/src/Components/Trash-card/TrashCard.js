@@ -24,6 +24,7 @@ export const TrashCard = ({trash})=>{
             <div className="title-box">
             <h1 className="title-txt">{trash.title}</h1>
             <small>{trash.data}</small>
+            <span className={`priority-tag-${trash.priority} && ${trash.priority}`}>{trash.priority}</span>
             </div>
             <p dangerouslySetInnerHTML={{ __html: trash.content}}/>
 
