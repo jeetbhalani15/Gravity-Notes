@@ -138,7 +138,7 @@ const addPriority =(e)=>{
         </button>
         <button
           className="card-action-btn"
-          onClick={() => archiveNote(note, authState, noteDispatch)}
+          onClick={() => archiveNote(note, authState, noteDispatch,setFilter)}
         >
           <BiArchiveIn size={25} />
         </button>
