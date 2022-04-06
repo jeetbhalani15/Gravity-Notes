@@ -12,9 +12,11 @@ import { IoFitness } from "react-icons/io5";
 import { VscNote } from "react-icons/vsc";
 import { BsTags } from "react-icons/bs";
 import "./Tagpage.css"
+import { useAuth } from "../../Contexts/Auth-context";
 
 export const Tags = ()=>{
   const {note,noteState} = useNotes();
+  const {authState} = useAuth();
 return(
     <>
     <Navbar />
@@ -28,7 +30,7 @@ return(
             </h1>
           </div>
         </div>
-        {note.tags.length === 0 ? (
+        {note.tags.length === 0 && authState.token === null ? (
           <>
             <div className="no-note-txt">
               <BsTags  color="grey" size={175} />

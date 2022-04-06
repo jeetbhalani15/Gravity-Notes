@@ -44,3 +44,6 @@
 .filter-items{
     cursor: pointer;
 }
+.bold-txt{
+    color: grey;
+}

@@ -94,6 +94,9 @@
 }
 .widgets2{
     display: flex;
+    display: flex;
+    gap: 4rem;
+    margin-left: 8rem;
 }
 .menu{
     display: flex;
@@ -162,4 +165,10 @@ a:hover {
     background: #ffffff;
     border-radius: 50%;
     height:30px;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

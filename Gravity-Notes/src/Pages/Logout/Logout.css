@@ -1,0 +1,15 @@
+.login-btn{
+    padding: 0.8rem 7rem;
+    background-color: #bdffbd;
+    border: none;
+    border: 1px solid #7ebc7e;
+    font-size: 1.2rem;
+}
+.logout-box{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-right: 10rem;
+}

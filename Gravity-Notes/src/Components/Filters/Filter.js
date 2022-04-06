@@ -80,7 +80,7 @@ export const Filter = ()=>{
                     <h1 className="filter-sub-heading">Sort by Tags</h1>
                     <hr />
                  <div className="tag-filter">
-                <span className="cursor">get <strong>Sort By Tags</strong>  From </span>
+                <span className="cursor">get <strong className="bold-txt">Sort By Tags</strong>  From </span>
                 <p className="underline"><Link to={"/label"}>Tags <BsTagsFill color="grey" size={12} /></Link></p>
            </div>
         </div>

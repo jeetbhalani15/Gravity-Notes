@@ -12,6 +12,7 @@ import Mockman from "mockman-js";
 import { Archive } from "./Pages/Archive/Archive-page";
 import { Trash } from "./Pages/Trash-page/Trash";
 import { Tags } from "./Pages/Tags-page/Tag-page";
+import { Logout } from "./Pages/Logout/Logout";
 
 
 
@@ -28,6 +29,7 @@ function App() {
        <Route  path="/archive" element={ <Archive/>}/>
        <Route  path="/trash" element={ <Trash/>}/>
        <Route  path="/label" element={ <Tags/>}/>
+       <Route  path="/logout" element={ <Logout/>}/>
        <Route  path="/mock" element={<Mockman/>}/>
      </Routes>
    </>
