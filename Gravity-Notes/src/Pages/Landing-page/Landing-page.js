@@ -26,10 +26,10 @@ return(
                         <li className="nav-btn-txt">Home</li>
                         <li className="nav-btn-txt">Docs</li>
                         <li className="nav-btn-txt">About Us</li>
-                        <li><button className="toggle-btn">
+                        {/* <li><button className="toggle-btn">
                             <i className="fa fa-moon-o"></i>
                             <i className="fa fa-sun-o"></i>
-                          </button></li>
+                          </button></li> */}
                         
                         </ul>
                     </div>

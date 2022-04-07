@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { Footer } from "../../../Components/Footer/Footer";
 import { Navigation } from "../../../Components/Navigation/Navigation";
 import { useAuth } from "../../../Contexts/Auth-context";
+import { useTheme } from "../../../Contexts/Theme-context";
 import "./Logout.css";
 export function Logout() {
   const { authState, authDispatch } = useAuth();
+  const {darkTheme} = useTheme();
   return (
     <div className="big-wrapper dark">
       <Navigation />
