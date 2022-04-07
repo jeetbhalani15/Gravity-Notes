@@ -31,9 +31,9 @@ export const Navbar = ()=>{
           <div className="logo-mg">
             <img className="logo-img" src={logo} alt="logo" />
           </div>
-          <div className="bg-color">
+          <div className="bg-color ">
             <Link to="/">
-              <div>GRAVITY</div>
+              <div className="logo-txt">GRAVITY</div>
               <small className="small-txt">Notes</small>
             </Link>
           </div>

@@ -20,10 +20,20 @@
         border-radius: 11px;
         border: none;
     }
+    .lable-container {
+        position: absolute;
+        bottom: 53%;
+        right: 54%;
+    }
+    .color-box {
+        position: absolute;
+        bottom: 42.5%;
+        right: 14.5%;
+    }
     .content {
         margin-left: 4rem;
         width: 86rem;
-        min-height: 136vh;
+        /* min-height: 136vh; */
     }
     .headermenu {
         width: 6rem;
@@ -35,12 +45,12 @@
  @media screen and (max-width:660px) {
     .lable-container {
         position: absolute;
-        bottom: 17%;
-        right: 48%;
+        bottom: 53%;
+        right: 49%;
     }
     .color-box {
         position: absolute;
-        bottom: 6.5%;
+        bottom: 42.5%;
         right: -3.5%;
     }
     .filter-btn {
@@ -74,7 +84,7 @@
     }
     .header {
      gap: 46rem;
-     margin-left: 10rem;
+     margin-left: 4rem;
     }
     .unused-btn{
         display: none;
@@ -97,7 +107,7 @@
         font-size: 4rem;
     }
     .txt-editor-box {
-        margin-top: 6rem;
+        margin-top: 2rem;
         width: 42rem;
     }
     .note h1 {
@@ -113,5 +123,40 @@
     .textarea-form input {
         font-size: 1.5rem;
     }
-
- }
+    .small-txt {
+        display: flex;
+        font-size: 2rem;
+        flex-flow: row-reverse;
+        color: #feb24c;
+    }
+    .widgets2 {
+        display: flex;
+        display: flex;
+        gap: 1rem;
+        margin-left: 13rem;
+        font-size: 1.5rem;
+    }
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 8rem;
+    }
+    .logo-txt {
+        font-size: 2.3rem;
+        margin-left: -2rem;
+        margin-top: 1rem;
+    }
+    .lable-container {
+        position: absolute;
+        bottom: 53%;
+        right: 22%;
+    }
+    .color-box {
+        position: absolute;
+        bottom: 42.5%;
+        right: -58.5%;
+    }
+    
+}

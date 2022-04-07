@@ -281,6 +281,9 @@ media quries
     .round{
         margin-left: 0rem;
     }
+    .bg-color {
+        font-size: 2.3rem;  
+    }
     
 }
 @media screen and(max-width: 670px) {
