@@ -88,8 +88,8 @@
 }
 .color-box{
     position: absolute;
-    bottom: 39.5%;
-    right: 43.5%;
+    bottom: 42.5%;
+    right: 44.5%;
     display: flex;
     width: fit-content;
     gap: 0.5rem;
@@ -133,8 +133,8 @@
 }
 .lable-container{
     position: absolute;
-    bottom: 39%;
-    right: 66%;
+    bottom: 53%;
+    right: 67%;
     display: flex;
     padding: 0.5rem;
     border-radius: 12px;
