@@ -1,4 +1,4 @@
-#  GRAVITY Notes
+#  Gravity Notes
 
 Gravity Notes is he Best Place To Jot Down Quick Thoughts Or To Save Longer Filled With Checklists, Images, Web Links, Scanned Docs, Handwritten Notes..
 
