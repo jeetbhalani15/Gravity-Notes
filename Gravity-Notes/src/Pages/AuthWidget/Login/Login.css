@@ -1,7 +1,7 @@
  /* LOGIN PAGE CSS */
 
 .login-content{
-    margin-top: -10rem;
+    margin-top: -52rem;
 }
 .logo{
     width: 45%;
@@ -79,7 +79,7 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1.875rem;
     font-weight: 400;
-    height: 100vh;
+    height: 195vh;
     line-height: 1.5;
     margin: 0;
     
@@ -220,3 +220,71 @@
     border-bottom: 2px solid bisque;
     cursor: pointer;
   }
+
+
+  @media screen and (max-width: 870px) {
+    .login-content {
+      width: 30rem;
+      margin-top: -3rem;
+  }
+  .guest-btn {
+    width: 18rem;
+    margin-left: 6rem;
+}
+.pd {
+  font-size: 1.2rem;
+  padding: 1rem 7rem;
+  color: var(--text-color);
+}
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 156vh;
+}
+  }
+ 
+  @media screen and (max-width: 670px) {
+    .login-content {
+      width: 26rem;
+      margin-top: -3rem;
+      font-size: 1.5rem;
+    }
+    .guest-btn {
+      width: 18rem;
+      margin-left: 4rem;
+  }
+ 
+}
+  @media screen and (max-width: 430px) {
+    .login-content {
+      width: 20rem;
+      margin-top: -3rem;
+      font-size: .9rem;
+    }
+    .guest-btn {
+      width: 18rem;
+      margin-left: 2rem;
+  }
+  .form .form__input {
+    border: 0;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 13rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+.auth-icon {
+  display: inline-block;
+  fill: var(--login-icon-color);
+  font-size: 1.3rem;
+  height: 2rem;
+  width: -2rem;
+  vertical-align: middle;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+ 
+}

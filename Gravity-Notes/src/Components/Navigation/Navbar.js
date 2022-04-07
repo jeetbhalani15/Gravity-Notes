@@ -32,7 +32,7 @@ export const Navbar = ()=>{
             <img className="logo-img" src={logo} alt="logo" />
           </div>
           <div className="bg-color">
-            <Link to="/Landingpage">
+            <Link to="/">
               <div>GRAVITY</div>
               <small className="small-txt">Notes</small>
             </Link>

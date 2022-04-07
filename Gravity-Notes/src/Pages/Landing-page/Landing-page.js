@@ -4,7 +4,7 @@ import logo from "../../Assets/Images/hero-logo.png";
 import notelogo from "../../Assets/Images/notes-logo.png";
 import notelogo1 from "../../Assets/Images/note-paper.svg";
 
-export const Landingpage = ()=>{
+export const LandingPage = ()=>{
 return(
     <>
     <div className="big-wrapper dark">

@@ -7,7 +7,7 @@ import { Navbar } from "./Components/Navigation/Navbar";
 import { Login } from "./Pages/AuthWidget/Login/Login";
 import { SignUp } from "./Pages/AuthWidget/SignUp/SignUp";
 import { Homepage } from "./Pages/Homepage/Homepage";
-import { Landingpage } from "./Pages/Landing-page/Landing-page";
+import { LandingPage } from "./Pages/Landing-page/Landing-page";
 import Mockman from "mockman-js";
 import { Archive } from "./Pages/Archive/Archive-page";
 import { Trash } from "./Pages/Trash-page/Trash";
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     <Routes>
-       <Route exact path="/" element={<Landingpage/>}/>
+       <Route exact path="/" element={<LandingPage/>}/>
        <Route  path="/home" element={  <Homepage/>}/>
        <Route  path="/login" element={  <Login/>}/>
        <Route  path="/signup" element={ <SignUp/>}/>
