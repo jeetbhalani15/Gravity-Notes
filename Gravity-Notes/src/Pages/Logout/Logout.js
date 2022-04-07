@@ -16,7 +16,7 @@ return(
       <div className="content">
        <div className="logout-box">
            <SiCachet color="green" size={35}/>
-           <h1 className={darkTheme? "txt-color" : null}>You have been logged out successfully!!</h1>
+           <h1 className={darkTheme? "logout-color" : null}>You have been logged out successfully!!</h1>
         <Link to={"/login"}><button className="login-btn">Login</button></Link>
        </div>
        
