@@ -11,13 +11,15 @@ import { deleteNote } from "../../Utils/DeleteNote";
 import { archiveNote } from "../../Utils/ArchiveNote";
 import { useState } from "react";
 import { IoColorPaletteSharp } from "react-icons/io5";
-import "./Notecard.css";
 import { editNote } from "../../Utils/EditNote";
 import { IoIosAdd } from "react-icons/io";
+import { useTheme } from "../../Contexts/Theme-context";
+import "./Notecard.css";
 
 
 export const Notecard = ({ note }) => {
   const { authState } = useAuth();
+  const {darkTheme} = useTheme();
   const { noteDispatch, setNote, setFilter, filter } = useNotes();
   const [colorSelector, setColorSelector] = useState(false);
   const [showLabel, setShowLabel] = useState(false);

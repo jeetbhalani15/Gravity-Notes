@@ -3,9 +3,9 @@ import { createContext, useContext, useState } from "react";
 const themeContext = createContext();
 
 const ThemeProvider = ({children})=>{
-    const [theme, setTheme] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(false);
  return(
-     <themeContext.Provider value={{theme, setTheme}}>
+     <themeContext.Provider value={{darkTheme, setDarkTheme}}>
          {children}
      </themeContext.Provider>
  );

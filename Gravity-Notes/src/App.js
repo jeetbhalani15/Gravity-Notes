@@ -13,14 +13,18 @@ import { Archive } from "./Pages/Archive/Archive-page";
 import { Trash } from "./Pages/Trash-page/Trash";
 import { Tags } from "./Pages/Tags-page/Tag-page";
 import { Logout } from "./Pages/Logout/Logout";
+import { useTheme } from "./Contexts/Theme-context";
+
 
 
 
 
 
 function App() {
+  const {darkTheme} = useTheme();
   return (
     <>
+    <div id="root" className={darkTheme ? "dark" : null}  >
     <Routes>
        <Route exact path="/" element={<LandingPage/>}/>
        <Route  path="/home" element={  <Homepage/>}/>
@@ -32,6 +36,7 @@ function App() {
        <Route  path="/logout" element={ <Logout/>}/>
        <Route  path="/mock" element={<Mockman/>}/>
      </Routes>
+     </div>
    </>
   );
 }

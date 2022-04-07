@@ -16,7 +16,7 @@ return(
           </div>
           <div className="bg-color">
             {/* <Link to="/"> */}
-              <div>GRAVITY</div>
+              <div className="txt">GRAVITY</div>
               <small className="small-txt">Notes</small>
             {/* </Link> */}
           </div>

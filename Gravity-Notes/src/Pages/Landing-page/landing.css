@@ -53,7 +53,6 @@ li{
     margin-right: -1rem;
 }
 .bg-color{
-    color: #5e6161;
     font-size: 1.3rem;
     font-family: monospace;
     font-weight: 600;
@@ -97,7 +96,7 @@ header .container{
     list-style: none;
     align-items: center;
     gap: 4rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 .links a{
@@ -365,6 +364,9 @@ media quries
         color: white;
         margin-left: 0;
         padding: 2rem 0;
+    }
+    .txt{
+        color: white;
     }
     .links .btn{
         background: none;
