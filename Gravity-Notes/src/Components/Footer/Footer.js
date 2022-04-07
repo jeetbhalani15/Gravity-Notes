@@ -1,10 +1,12 @@
 import {ImGithub} from "react-icons/im";
 import {ImTwitter} from "react-icons/im";
 import {ImLinkedin} from "react-icons/im";
+import { useTheme } from "../../Contexts/Theme-context";
 import "./Footer.css";
 
 
 export function Footer() {
+  const {darkTheme} = useTheme();
     return (
       <footer>
         <div>
@@ -36,7 +38,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer-txt">
+          <div className={darkTheme ? "footer-txt" : null}>
             © 2022  |  Gravity Notes All Rights Resevered.
           </div>
         </div>

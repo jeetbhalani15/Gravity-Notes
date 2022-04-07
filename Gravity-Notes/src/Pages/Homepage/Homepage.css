@@ -41,6 +41,7 @@
     footer{
         margin-left: 35rem;
     }
+  
 }
  @media screen and (max-width:660px) {
     .lable-container {
@@ -48,6 +49,7 @@
         bottom: 53%;
         right: 49%;
     }
+    
     .color-box {
         position: absolute;
         bottom: 42.5%;
@@ -74,7 +76,7 @@
     }    
  }
 
- @media screen and (max-width:430px) {
+ @media screen and (max-width:429px) {
     .search {
         display: none;
       

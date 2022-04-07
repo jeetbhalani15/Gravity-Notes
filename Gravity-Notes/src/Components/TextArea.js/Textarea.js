@@ -16,9 +16,11 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./Textarea.css";
 import { Filter } from "../Filters/Filter";
+import { useTheme } from "../../Contexts/Theme-context";
 
 export const Textarea = () => {
   const { authState } = useAuth();
+  const {darkTheme}= useTheme();
   const { noteState, noteDispatch, note, setNote, filter, setFilter } = useNotes();
   const [isExpanded, setisExpanded] = useState(false);
   const [colorSelector, setColorSelector] = useState(false);
@@ -233,7 +235,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("work")}
                 checked= {note.tags.find(item => item === "work")}/>
-                <label htmlFor="work">Work</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Work</label>
               </div>
               <div className="tags">
                 <input
@@ -241,7 +243,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("health")}
                 checked= {note.tags.find(item => item === "health")}/>
-                <label htmlFor="work">Health</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Health</label>
               </div>
               <div className="tags">
                 <input
@@ -249,7 +251,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("fitness")}
                 checked= {note.tags.find(item => item === "fitness")}/>
-                <label htmlFor="work">Fitness</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Fitness</label>
               </div>
               </div>
               <div className="tag-box">
@@ -259,7 +261,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("personal")}
                 checked= {note.tags.find(item => item === "personal")}/>
-                <label htmlFor="work">Personal</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Personal</label>
               </div>
               <div className="tags">
                 <input
@@ -267,7 +269,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("study")}
                 checked= {note.tags.find(item => item === "study")}/>
-                <label htmlFor="work">Study</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Study</label>
               </div>
               <div className="tags">
                 <input
@@ -275,7 +277,7 @@ export const Textarea = () => {
                 type="checkbox"
                 onClick={()=>addTagsInArray("medication")}
                 checked= {note.tags.find(item => item === "medication")}/>
-                <label htmlFor="work">Medication</label>
+                <label className={darkTheme ? "label-txt" : null} htmlFor="work">Medication</label>
               </div>
               </div>
           </div>
