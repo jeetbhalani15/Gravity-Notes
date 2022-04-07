@@ -6,9 +6,11 @@ import { Footer } from "../../Components/Footer/Footer";
 import { ArchiveCard } from "../../Components/Archive-card/ArchiveCard";
 import { useNotes } from "../../Contexts/NotesAction-context";
 import { MdOutlineArchive } from "react-icons/md";
+import { useAuth } from "../../Contexts/Auth-context";
 
 export const Archive = () => {
   const { noteState } = useNotes();
+  const {authState} = useAuth();
   return (
     <>
       <Navbar />
@@ -22,7 +24,7 @@ export const Archive = () => {
               </h1>
             </div>
           </div>
-          {noteState.archives.length === 0 ? (
+          {noteState.archives.length === 0 && authState.token === null ? (
             <>
               <div className="no-note-txt">
                 <MdOutlineArchive color="grey" size={175} />

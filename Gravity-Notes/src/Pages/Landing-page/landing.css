@@ -70,6 +70,10 @@ li{
 }
 .heading-txt{
     font-size: 5rem;
+    color: white;
+}
+.hero-txt{
+    color: white;
 }
 .word-color{
     color: orange;
@@ -84,11 +88,17 @@ header .container{
     justify-content: space-between;
     align-items: center;
 }
+.nav-btn-txt{
+    color: white;
+}
 
 .links ul{
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 4rem;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 .links a{
     color: black;
@@ -260,22 +270,72 @@ h1, p{
 /* 
 media quries
 */
-
+@media screen and(max-width: 430px) {
+    .round {
+        margin-left: 1rem;
+        border-radius: 16%;
+    }
+    img{
+     width: 90%;
+    }
+    .round{
+        margin-left: 0rem;
+    }
+    .bg-color {
+        font-size: 2.3rem;  
+    }
+    
+}
+@media screen and(max-width: 670px) {
+    
+    .round {
+        border-radius: 16%;
+    }
+    img{
+     width: 100%;
+    }
+    
+}
 @media screen and (max-width: 870px) {
+    
     .showcase-area .container{
         grid-template-columns: 1fr;
         justify-content: center;
         grid-gap: 2rem;
+        margin-left: 2rem;
+    }
+    .btn {
+        display: inline-block;
+        padding: 0.8rem 0.9rem;
+        border-radius: 16px;
+        margin-top: 1.9rem ;
+        text-transform: capitalize;
+    }
+
+    .round {
+        margin-left: 0rem;
+        border-radius: 16%;
     }
     .big-title{
         font-size: 1.1rem;
+    }
+    .showcase-area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 82%;
+        margin-left: 4rem;
+    }
+    .heading-txt{
+        font-size: 3.4rem;
     }
     .text{
         font-size: 0.95rem;
         margin: 1.4rem 0 1.5rem;
     }
     img{
-        width: 100%;
+        width: 72%;
     }
     .hamburger-menu{
         display: flex;
@@ -330,18 +390,5 @@ media quries
     }
 }
 
-@media screen and(max-width: 470px) {
-    .container{
-        padding: 0 1.5rem;
-    }
-    .big-title{
-        font-size: 0.9rem;
-    }
-    .text{
-        margin: 1.1rem 0 1.5rem;
-    }
-    .showcase-area .btn{
-        font-size: 0.8rem;
-    }
-    
-}
+
+

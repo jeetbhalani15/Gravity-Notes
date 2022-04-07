@@ -1,40 +1,53 @@
 import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
-import { Notecard } from "../Notes-card/Notecard";
+import {VscFilter} from "react-icons/vsc";
+import {FiFilter} from "react-icons/fi";
 
+import { Notecard } from "../Notes-card/Notecard";
 import { useAuth } from "../../Contexts/Auth-context";
 import { useNotes } from "../../Contexts/NotesAction-context";
-import axios from "axios";
-import "./Textarea.css";
 import { addNoteHandler } from "../../Utils/AddNote";
 import { editNote } from "../../Utils/EditNote";
 import { MdOutlineFormatColorReset, MdOutlineLightbulb } from "react-icons/md";
-import { IoColorPaletteSharp } from "react-icons/io5";
+import { IoColorPaletteSharp, IoFilter } from "react-icons/io5";
 import { BiTagAlt } from "react-icons/bi";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "./Textarea.css";
+import { Filter } from "../Filters/Filter";
 
 export const Textarea = () => {
   const { authState } = useAuth();
-  const { noteState, noteDispatch, note, setNote } = useNotes();
+  const { noteState, noteDispatch, note, setNote, filter, setFilter } = useNotes();
   const [isExpanded, setisExpanded] = useState(false);
   const [colorSelector, setColorSelector] = useState(false);
+  const [showLabel, setShowLabel] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
+  let itemsInTags=[...note.tags];
+  let tempTag = "";
+  const date = new Date();
+  const time = date.getTime();
 
   const inputHandler = (e) => {
     setNote((pre) => ({
       ...pre,
       title: e.target.value,
+      time: time,
       data: new Date(Date.now()).toLocaleString().split(","[0]),
     }));
   };
 
   const userColorSelector = (color) => {
     setNote((pre) => ({ ...pre, color: color }));
+    setColorSelector(false)
   };
 
   const showColorSelector = (note) => {
     setColorSelector((pre) => !pre);
+  };
+  const toggleLabel = () => {
+    setShowLabel((pre) => !pre);
   };
 
   // handle expand of textbox on click
@@ -43,6 +56,7 @@ export const Textarea = () => {
     console.log("hi");
   };
   const submitHandler = (e) => {
+    // setisExpanded(false)
     e.preventDefault();
     note.flag
       ? editNote(note, authState, noteDispatch, setNote)
@@ -52,10 +66,31 @@ export const Textarea = () => {
     setNote((pre) => ({ ...pre, content: e }));
   };
 
+  const addTagsInArray = (tag)=>{
+     if(itemsInTags.find(item => item === tag)) {
+     itemsInTags = itemsInTags.filter(item => item !== tag)
+     } else {
+       itemsInTags.push(tag)
+     }
+    }
+
+    const tagInputHandler =(e)=>{
+      tempTag = e.target.value
+    }
+
+    const addTagToCard =()=>{
+      tempTag && itemsInTags.push(tempTag)
+      setNote(pre => ({...pre, tags: itemsInTags}))
+      setShowLabel(false)
+    }
+    const toggleFilter = ()=>{
+      setShowFilter(pre => !pre)
+    }
+
   // onclick add notes
   return (
     // Textarea Component
-    <div>
+    <div className="txt-editor-box">
       <form
         onSubmit={(e) => submitHandler(e)}
         className={`textarea-form ${note.color}`}
@@ -71,7 +106,7 @@ export const Textarea = () => {
           onClick={handleExpand}
           required
         />
-
+         {/* NORMAL TEXT EDITOR */}
         <p>
           {/* <textarea className={note.color}
             value={note.content}
@@ -82,10 +117,13 @@ export const Textarea = () => {
             onClick={handleExpand}
             required
             > </textarea> */}
+
+            {/* RICH TEXT EDITOR */}
           {isExpanded && (
             <ReactQuill
               className={`quill-editor ${note.color} `}
               value={note.content}
+              placeholder={"Take a note..."}
               onChange={(e) => quillHander(e)}
             />
           )}
@@ -100,12 +138,17 @@ export const Textarea = () => {
             />
           ) : null}
           {isExpanded ? (
-            <BiTagAlt className="color-selector-btn" color="grey" size={25} />
+            <BiTagAlt
+              onClick={toggleLabel}
+              className="color-selector-btn"
+              color="grey"
+              size={25}
+            />
           ) : null}
         </div>
         {note.flag ? (
           <button className="add-note-btn">
-            <GrUpdate color="white" size={20} />
+            <GrUpdate color="white" size={18} />
           </button>
         ) : (
           <button className="add-note-btn">
@@ -113,6 +156,11 @@ export const Textarea = () => {
           </button>
         )}
       </form>
+
+      {/* FILTER */}
+      <button onClick={toggleFilter} className="filter-btn">Apply Filters<FiFilter size={20}/></button>
+       {showFilter && <Filter/> }
+       
 
       {/* COLOR SELECTOR BOX */}
       {colorSelector && (
@@ -171,6 +219,73 @@ export const Textarea = () => {
             {" "}
             <MdOutlineFormatColorReset size={12} visibility={"hidden"} />{" "}
           </button>
+        </div>
+      )}
+
+      {/* LABEL_BOX */}
+      {showLabel && (
+        <div className="lable-container">
+          <div className="tag-selection-box">
+            <div className="tag-box">
+              <div className="tags">
+                <input
+                name="work"
+                type="checkbox"
+                onClick={()=>addTagsInArray("work")}
+                checked= {note.tags.find(item => item === "work")}/>
+                <label htmlFor="work">Work</label>
+              </div>
+              <div className="tags">
+                <input
+                name="health"
+                type="checkbox"
+                onClick={()=>addTagsInArray("health")}
+                checked= {note.tags.find(item => item === "health")}/>
+                <label htmlFor="work">Health</label>
+              </div>
+              <div className="tags">
+                <input
+                name="fitness"
+                type="checkbox"
+                onClick={()=>addTagsInArray("fitness")}
+                checked= {note.tags.find(item => item === "fitness")}/>
+                <label htmlFor="work">Fitness</label>
+              </div>
+              </div>
+              <div className="tag-box">
+              <div className="tags">
+                <input
+                name="personal"
+                type="checkbox"
+                onClick={()=>addTagsInArray("personal")}
+                checked= {note.tags.find(item => item === "personal")}/>
+                <label htmlFor="work">Personal</label>
+              </div>
+              <div className="tags">
+                <input
+                name="study"
+                type="checkbox"
+                onClick={()=>addTagsInArray("study")}
+                checked= {note.tags.find(item => item === "study")}/>
+                <label htmlFor="work">Study</label>
+              </div>
+              <div className="tags">
+                <input
+                name="medication"
+                type="checkbox"
+                onClick={()=>addTagsInArray("medication")}
+                checked= {note.tags.find(item => item === "medication")}/>
+                <label htmlFor="work">Medication</label>
+              </div>
+              </div>
+          </div>
+          <input
+            className="txt-editor-label-input"
+            type="text"
+            placeholder="Enter label here..."
+            onChange={tagInputHandler}
+          />
+          <IoIosAdd onClick={()=> addTagToCard()} className="tag-btn" size={20} />
         </div>
       )}
 

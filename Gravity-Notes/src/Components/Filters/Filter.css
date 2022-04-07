@@ -1,0 +1,49 @@
+.filter-box{
+    position: absolute;
+    right: 3%;
+    top: 16%;
+    width: 19rem;
+    padding: 1.5rem;
+    border: 2px solid #e3e3e3;
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    color: #ff9945;
+    font-weight: 500;
+}
+.filter-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7.5rem;
+    margin-bottom: .5rem;
+    cursor: default;
+}
+.filter-sub-heading{
+    font-size: 1.5rem;
+    color: #ff8e4c;
+    background-color: aliceblue;
+    cursor: default;
+}
+.filter-list{
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.filter-body{
+    padding: 0.5rem;
+}
+.underline{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tag-filter{
+    padding: 0.5rem;
+}
+.cursor{
+    cursor: default;
+}
+.filter-items{
+    cursor: pointer;
+}
+.bold-txt{
+    color: grey;
+}

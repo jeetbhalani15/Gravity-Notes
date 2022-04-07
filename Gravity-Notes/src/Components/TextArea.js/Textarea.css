@@ -1,6 +1,6 @@
 .textarea-form{
     position: relative;
-    width: 600px;
+    width: 46rem;
     margin: 32px auto 50px auto;
     background: #fff;
     padding: 7px;
@@ -88,8 +88,8 @@
 }
 .color-box{
     position: absolute;
-    bottom: 41.5%;
-    right: 43%;
+    bottom: 42.5%;
+    right: 44.5%;
     display: flex;
     width: fit-content;
     gap: 0.5rem;
@@ -117,7 +117,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 8rem;
-    margin-right: 13rem;
+    margin-right: 11rem;
     opacity: 0.3;
 }
 .no-note-pra{
@@ -125,3 +125,71 @@
     font-weight: 600;
     color: grey;
 }
+.txt-editor-label-input{
+    width: 14rem;
+    padding: .7rem;
+    border-radius: 9px;
+    border: 1px solid grey;
+}
+.lable-container{
+    position: absolute;
+    bottom: 53%;
+    right: 67%;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 5px rgb(128 128 128);
+}
+.tags{
+    cursor: pointer;
+    display: flex;
+    grid-gap: 5px;
+    gap: 5px;
+    margin-top: 5px;
+}
+.tags input{
+    cursor: pointer;
+}
+.tag-selection-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 14rem;
+    padding: 0.5rem;
+    justify-content: space-around;
+}
+.tag-btn{
+    cursor: pointer;
+    position: absolute;
+    bottom: 12%;
+    right: 10%;
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: #bfbfbf;
+}
+.txt-editor-box{
+    margin-top: 1rem;
+    width: 65rem;
+
+}
+.filter-btn{
+    position: absolute;
+    display: flex;
+    top: 3%;
+    right: 3%;
+    padding: 0.8rem 5rem;
+    border-radius: -4px;
+    border-radius: 11px;
+    align-items: center;
+    grid-gap: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #90867d;
+    font-family: cursive;
+    border: none;
+}
+
+
