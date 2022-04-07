@@ -36,16 +36,16 @@ export const Sidebar = ()=>{
                 <span className="tag">Notes</span><span className="badge">{noteState.notes.length}</span>
                
             </li>
-            <li className="item">
+            <li className="item unused-btn">
                 <button className="sidebar-btn" ><a href="#"><FaRegBell size={30}/></a></button>
                 <span className="tag">Reminders</span>
             </li>
-            <li className="item">
+            <li className="item unused-btn">
                 <button className="sidebar-btn" ><a href="#"><BiTagAlt size={30} /></a></button>
                 <span  className="tag">Array</span>
             </li>
     
-            <li className="item">
+            <li className="item unused-btn">
                 <button className="sidebar-btn" ><a href="#"><BiTagAlt size={30}/></a></button>
                 <span  className="tag">String</span>
             </li>
