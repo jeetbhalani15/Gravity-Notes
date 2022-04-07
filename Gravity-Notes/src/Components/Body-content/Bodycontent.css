@@ -5,8 +5,10 @@
     justify-content: center;
     align-items: center;
     margin-left: 12rem;
+    width: 86rem;
 }
 .body-content{
+  position: relative;
   display: grid;
-  grid-template-columns: 10rem 90rem; 
+  grid-template-columns: 6rem 94rem;
 }

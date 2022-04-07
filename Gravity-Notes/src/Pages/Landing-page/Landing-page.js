@@ -4,8 +4,9 @@ import logo from "../../Assets/Images/hero-logo.png";
 import notelogo from "../../Assets/Images/notes-logo.png";
 import notelogo1 from "../../Assets/Images/note-paper.svg";
 
-export const Landingpage = ()=>{
+export const LandingPage = ()=>{
 return(
+    <>
     <div className="big-wrapper dark">
         <header>
             <div className="container">
@@ -46,7 +47,7 @@ return(
                     <div className="cta-btn">
                        <Link to="/login"> <button className="btn">Join Now</button></Link>
                     </div>
-                    <div className="login-btn">
+                    <div className="btn">
                         {/* <button className="aha-btn">Already have Account </button> */}
                     </div>
                 </div>
@@ -66,6 +67,6 @@ return(
            </div>
         </footer>
     </div>
-   
+    </>
 );
 }

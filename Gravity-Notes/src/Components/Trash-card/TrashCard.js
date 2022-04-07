@@ -34,7 +34,7 @@ export const TrashCard = ({trash})=>{
             <span>{item} </span>
             <span
               onClick={() =>
-                deleteChip(item, note, authState, noteDispatch, setNote)
+                deleteChip(item, note, authState, noteDispatch)
               }
               className="delete-chip-btn"
             >

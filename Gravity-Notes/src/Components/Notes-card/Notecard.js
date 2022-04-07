@@ -18,12 +18,14 @@ import { IoIosAdd } from "react-icons/io";
 
 export const Notecard = ({ note }) => {
   const { authState } = useAuth();
-  const { noteDispatch, setNote } = useNotes();
+  const { noteDispatch, setNote, setFilter, filter } = useNotes();
   const [colorSelector, setColorSelector] = useState(false);
   const [showLabel, setShowLabel] = useState(false);
+  const [isExpanded, setisExpanded] = useState(false);
   let itemsInTags = [...note.tags];
   let tempTag = "";
-  console.log(note.tags)
+  const date = new Date();
+  const time = date.getTime();
 
   const editHandler = async (note) => {
     setNote((pre) => ({
@@ -33,8 +35,13 @@ export const Notecard = ({ note }) => {
       _id: note._id,
       flag: true,
       color: note.color,
+      time: note.time,
       date: new Date(Date.now()).toLocaleString().split(","[0]),
     }));
+    setisExpanded(true);
+    setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+    noteDispatch({type:"CLEAR_FILTER"});
+    setFilter(pre => ({...pre, priority: ""}));
   };
 
   const showColorSelector = (note) => {
@@ -42,7 +49,9 @@ export const Notecard = ({ note }) => {
   };
   const applyColorOnCard = (colorName, note) => {
     const addedColorItem = { ...note, color: colorName };
-    editNote(addedColorItem, authState, noteDispatch, setNote);
+    editNote(addedColorItem, authState, noteDispatch,);
+    setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+    noteDispatch({type:"CLEAR_FILTER"});
   };
 
   const toggleLabel = () => {
@@ -68,18 +77,24 @@ export const Notecard = ({ note }) => {
     console.log("add")
     console.log(currentAddedTag)
     editNote(currentAddedTag, authState,noteDispatch,setNote)
+    setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+    noteDispatch({type:"CLEAR_FILTER"});
     setShowLabel(false);
   };
 
-  const deleteChip = (chip, note, authState, noteDispatch, setNote) => {
+  const deleteChip = (chip, note, authState, noteDispatch) => {
 
     const deletedChip = note.tags.filter( item => item !== chip);
     const newData = {...note, tags: deletedChip};
     editNote(newData, authState, noteDispatch, setNote);
+    setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+    noteDispatch({type:"CLEAR_FILTER"});
 }
 const addPriority =(e)=>{
   const priorityAdded = {...note, priority: e.target.value};
-  editNote(priorityAdded,authState,noteDispatch,setNote)
+  editNote(priorityAdded,authState,noteDispatch)
+  setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
+  noteDispatch({type:"CLEAR_FILTER"});
 }
 
   return (
@@ -97,7 +112,7 @@ const addPriority =(e)=>{
             <span>{item} </span>
             <span
               onClick={() =>
-                deleteChip(item, note, authState, noteDispatch, setNote)
+                deleteChip(item, note, authState, noteDispatch)
               }
               className="delete-chip-btn"
             >
@@ -109,9 +124,9 @@ const addPriority =(e)=>{
       
 
       <div className={`cardicon ${note.color}`}>
-        <button className="card-action-btn">
+        {/* <button className="card-action-btn">
           <MdMoreVert size={25} />
-        </button>
+        </button> */}
         <button
           className="card-action-btn"
           onClick={() => deleteNote(note, authState, noteDispatch)}
@@ -123,7 +138,7 @@ const addPriority =(e)=>{
         </button>
         <button
           className="card-action-btn"
-          onClick={() => archiveNote(note, authState, noteDispatch)}
+          onClick={() => archiveNote(note, authState, noteDispatch,setFilter)}
         >
           <BiArchiveIn size={25} />
         </button>
@@ -136,7 +151,8 @@ const addPriority =(e)=>{
         <button className="card-action-btn" onClick={() => toggleLabel()}>
           <BiTagAlt size={25} />
         </button>
-        <select onChange={(e)=>addPriority(e)} name="" id="priority" value={note.priority}>
+        <select onChange={(e)=>addPriority(e)} name="priority" id="priority" value={note.priority}>
+          <option value={"High"}>Priority</option>
           <option value={"High"}>High</option>
           <option value={"Medium"}>Medium</option>
           <option value={"Low"}>Low</option>
@@ -278,7 +294,7 @@ const addPriority =(e)=>{
               onChange={tagInputHandler}
             />
             <IoIosAdd
-              onClick={() => addTagToCard()}
+              onClick={addTagToCard}
               className="note-tag-btn"
               size={20}
             />

@@ -1,6 +1,6 @@
 .textarea-form{
     position: relative;
-    width: 600px;
+    width: 46rem;
     margin: 32px auto 50px auto;
     background: #fff;
     padding: 7px;
@@ -88,8 +88,8 @@
 }
 .color-box{
     position: absolute;
-    bottom: 39.5%;
-    right: 43.5%;
+    bottom: 42.5%;
+    right: 44.5%;
     display: flex;
     width: fit-content;
     gap: 0.5rem;
@@ -133,8 +133,8 @@
 }
 .lable-container{
     position: absolute;
-    bottom: 39%;
-    right: 66%;
+    bottom: 53%;
+    right: 67%;
     display: flex;
     padding: 0.5rem;
     border-radius: 12px;
@@ -170,4 +170,26 @@
 }
 .txt-editor-box{
     margin-top: 1rem;
+    width: 65rem;
+
 }
+.filter-btn{
+    position: absolute;
+    display: flex;
+    top: 3%;
+    right: 3%;
+    padding: 0.8rem 5rem;
+    border-radius: -4px;
+    border-radius: 11px;
+    align-items: center;
+    grid-gap: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #90867d;
+    font-family: cursive;
+    border: none;
+}
+
+

@@ -1,33 +1,39 @@
 import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
-import { Notecard } from "../Notes-card/Notecard";
+import {VscFilter} from "react-icons/vsc";
+import {FiFilter} from "react-icons/fi";
 
+import { Notecard } from "../Notes-card/Notecard";
 import { useAuth } from "../../Contexts/Auth-context";
 import { useNotes } from "../../Contexts/NotesAction-context";
-import axios from "axios";
-import "./Textarea.css";
 import { addNoteHandler } from "../../Utils/AddNote";
 import { editNote } from "../../Utils/EditNote";
 import { MdOutlineFormatColorReset, MdOutlineLightbulb } from "react-icons/md";
-import { IoColorPaletteSharp } from "react-icons/io5";
+import { IoColorPaletteSharp, IoFilter } from "react-icons/io5";
 import { BiTagAlt } from "react-icons/bi";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "./Textarea.css";
+import { Filter } from "../Filters/Filter";
 
 export const Textarea = () => {
   const { authState } = useAuth();
-  const { noteState, noteDispatch, note, setNote } = useNotes();
+  const { noteState, noteDispatch, note, setNote, filter, setFilter } = useNotes();
   const [isExpanded, setisExpanded] = useState(false);
   const [colorSelector, setColorSelector] = useState(false);
   const [showLabel, setShowLabel] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
   let itemsInTags=[...note.tags];
-  let tempTag = ""
+  let tempTag = "";
+  const date = new Date();
+  const time = date.getTime();
 
   const inputHandler = (e) => {
     setNote((pre) => ({
       ...pre,
       title: e.target.value,
+      time: time,
       data: new Date(Date.now()).toLocaleString().split(","[0]),
     }));
   };
@@ -77,6 +83,9 @@ export const Textarea = () => {
       setNote(pre => ({...pre, tags: itemsInTags}))
       setShowLabel(false)
     }
+    const toggleFilter = ()=>{
+      setShowFilter(pre => !pre)
+    }
 
   // onclick add notes
   return (
@@ -97,7 +106,7 @@ export const Textarea = () => {
           onClick={handleExpand}
           required
         />
-
+         {/* NORMAL TEXT EDITOR */}
         <p>
           {/* <textarea className={note.color}
             value={note.content}
@@ -108,6 +117,8 @@ export const Textarea = () => {
             onClick={handleExpand}
             required
             > </textarea> */}
+
+            {/* RICH TEXT EDITOR */}
           {isExpanded && (
             <ReactQuill
               className={`quill-editor ${note.color} `}
@@ -145,6 +156,11 @@ export const Textarea = () => {
           </button>
         )}
       </form>
+
+      {/* FILTER */}
+      <button onClick={toggleFilter} className="filter-btn">Apply Filters<FiFilter size={20}/></button>
+       {showFilter && <Filter/> }
+       
 
       {/* COLOR SELECTOR BOX */}
       {colorSelector && (

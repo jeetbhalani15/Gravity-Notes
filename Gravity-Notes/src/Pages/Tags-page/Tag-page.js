@@ -6,14 +6,17 @@ import { Sidebar } from "../../Components/Sidebar/Sidebar";
 import { TagCard } from "../../Components/Tags-card/TagCard";
 import { useNotes } from "../../Contexts/NotesAction-context";
 import {CgWorkAlt} from "react-icons";
-import "./Tagpage.css"
 import { ImBooks } from "react-icons/im";
 import { IoIosFitness } from "react-icons/io";
 import { IoFitness } from "react-icons/io5";
 import { VscNote } from "react-icons/vsc";
+import { BsTags } from "react-icons/bs";
+import "./Tagpage.css"
+import { useAuth } from "../../Contexts/Auth-context";
 
 export const Tags = ()=>{
   const {note,noteState} = useNotes();
+  const {authState} = useAuth();
 return(
     <>
     <Navbar />
@@ -27,10 +30,10 @@ return(
             </h1>
           </div>
         </div>
-        {note.tags.length === 0 ? (
+        {note.tags.length === 0 && authState.token === null ? (
           <>
             <div className="no-note-txt">
-              <MdOutlineEdit color="grey" size={175} />
+              <BsTags  color="grey" size={175} />
               <p className="no-note-pra">Your Labels appear here</p>
             </div>
           </>
