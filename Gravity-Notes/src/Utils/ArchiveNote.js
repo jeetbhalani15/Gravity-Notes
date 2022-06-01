@@ -1,4 +1,5 @@
 import axios from "axios"
+import toast from "react-hot-toast";
 
 export const archiveNote = async (note,authState,noteDispatch, setFilter)=>{
     try {
@@ -8,10 +9,9 @@ export const archiveNote = async (note,authState,noteDispatch, setFilter)=>{
             setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
             noteDispatch({type:"CLEAR_FILTER"});
         }
-        alert("notes archived")
-        console.log(res)
+        toast.success('Note Archived successfully!');
     } catch (error) {
-        alert(error);
+        toast.error('Something went wrong!');
         console.log(error)
     }
 }

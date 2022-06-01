@@ -1,4 +1,5 @@
 import axios from "axios"
+import toast from "react-hot-toast";
 
 export const restoreArchiveNote = async (note,authState,noteDispatch)=>{
     console.log(note)
@@ -8,8 +9,9 @@ export const restoreArchiveNote = async (note,authState,noteDispatch)=>{
             noteDispatch({type:"RESTORE_ARCHIVE_NOTE", payload: res.data})
         }
         console.log("res",res)
-        alert("Notes Restored")
+        toast.success('Note Restore Successfully!');
     } catch (error) {
+        toast.error('Something went wrong!');
         alert(error)
     }
 

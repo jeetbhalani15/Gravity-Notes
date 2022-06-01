@@ -14,6 +14,7 @@ import { IoColorPaletteSharp } from "react-icons/io5";
 import { editNote } from "../../Utils/EditNote";
 import { IoIosAdd } from "react-icons/io";
 import { useTheme } from "../../Contexts/Theme-context";
+import toast from "react-hot-toast";
 import "./Notecard.css";
 
 
@@ -79,6 +80,7 @@ export const Notecard = ({ note }) => {
     console.log("add")
     console.log(currentAddedTag)
     editNote(currentAddedTag, authState,noteDispatch,setNote)
+    toast.success('label Added to the notes!');
     setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
     noteDispatch({type:"CLEAR_FILTER"});
     setShowLabel(false);
@@ -89,6 +91,7 @@ export const Notecard = ({ note }) => {
     const deletedChip = note.tags.filter( item => item !== chip);
     const newData = {...note, tags: deletedChip};
     editNote(newData, authState, noteDispatch, setNote);
+    toast.success('label deleted from the notes!');
     setFilter(pre => ({...pre, priority: "", sortByDate: ""}))
     noteDispatch({type:"CLEAR_FILTER"});
 }

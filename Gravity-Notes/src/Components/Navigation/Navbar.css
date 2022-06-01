@@ -60,6 +60,7 @@
     border-radius: 10px;
     border: none;
     background-color: #F1F3F4;
+    outline: none;
 }
 .search button{
     /* padding: 18px; */
@@ -176,4 +177,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.logout{
+    margin-left: 9rem;
 }

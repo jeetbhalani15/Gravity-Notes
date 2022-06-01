@@ -1,4 +1,5 @@
 import axios from "axios"
+import toast from "react-hot-toast"
 
 export const deleteFromArchive = async (note,authState,noteDispatch)=>{
     try {
@@ -6,8 +7,8 @@ export const deleteFromArchive = async (note,authState,noteDispatch)=>{
         if(res.status === 200){
             noteDispatch({type: "DELETE_ARCHIVE_NOTE", payload: res.data.archives})
         }
-        alert("NOTES DELETED")
+        toast.success(' Archive Note Deleted!');
     } catch (error) {
-        alert(error)
+        // toast.error('Something went wrong!');
     }
 }

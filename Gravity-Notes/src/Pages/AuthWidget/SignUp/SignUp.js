@@ -3,10 +3,10 @@ import { useReducer, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/Images/hero-logo.png";
-
 import { useNavigate } from "react-router";
 import { InputPwd } from "../InputPwd";
 import { useAuth } from "../../../Contexts/Auth-context";
+import toast from "react-hot-toast";
 
 
 export function SignUp() {
@@ -149,12 +149,9 @@ export function SignUp() {
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
         navigate("/home");
-        console.log(formState.password)
-        alert("Account Made Successfully!!!");
+        toast.success('Login Successfully!');
       } catch (err) {
-        console.log(formValidation());
-        alert(err);
-        console.log(err);
+        toast.error('Something went wrong!');
       }
     }
   };

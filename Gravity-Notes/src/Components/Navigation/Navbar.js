@@ -17,12 +17,14 @@ import { useTheme } from '../../Contexts/Theme-context';
 import { HiSun } from 'react-icons/hi';
 import { ImSun } from 'react-icons/im';
 import { FaSun } from 'react-icons/fa';
+import { useNotes } from '../../Contexts/NotesAction-context';
 
 
 
 export const Navbar = ()=>{
   const {authState} = useAuth();
   const {darkTheme , setDarkTheme} = useTheme();
+  const {noteState,setSearchQuery,searchQuery} = useNotes();
 
   const logOutHandler =()=>{
     console.log(authState.token)
@@ -51,7 +53,7 @@ export const Navbar = ()=>{
            <div className="search">
                
                 <span className='search-btn'><IoIosSearch size={25}/>
-                <input type="text" placeholder='Search' /></span>
+                <input type="text" placeholder='Search' onChange={(e)=>setSearchQuery(e.target.value)} /></span>
                 
             </div>
             <div className="widgets">
@@ -65,8 +67,10 @@ export const Navbar = ()=>{
                 <div className="view my-3 "><button className='nav-btn'><a href="#"><MdGridView size={30}/></a></button></div>
                 {/* <div className="settings my-3 "><button className='nav-btn'><a href="#"><IoSettingsOutline size={30}/></a></button></div> */}
             </div>
+
             <div className="widgets2">
-                <div className="user flex"> <button className='nav-btn'><MdOutlineAccountCircle color='grey' size={30}/></button><span className={darkTheme ? "nav-btn-txt" : null}>User Profile</span></div>
+                {/* <div className="hidden flex"> <button className='nav-btn'><MdOutlineAccountCircle color='grey' size={30}/></button><span className={darkTheme ? "nav-btn-txt" : null}>User Profile</span></div> */}
+
                 {authState.token === null 
                 ? 
                  <div className="logout flex"><Link to={"/login"}><button className='nav-btn'><a href="#"><AiOutlineLogout size={30}/></a></button></Link><spank  className={darkTheme ? "nav-btn-txt" : null} >Log In</spank></div> 

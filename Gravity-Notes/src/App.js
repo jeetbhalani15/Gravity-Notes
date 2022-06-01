@@ -14,6 +14,7 @@ import { Trash } from "./Pages/Trash-page/Trash";
 import { Tags } from "./Pages/Tags-page/Tag-page";
 import { Logout } from "./Pages/Logout/Logout";
 import { useTheme } from "./Contexts/Theme-context";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -24,6 +25,10 @@ function App() {
   const {darkTheme} = useTheme();
   return (
     <>
+      <Toaster
+      position="top-center"
+      reverseOrder={true}
+    />
     <div id="root" className={darkTheme ? "dark" : null}  >
     <Routes>
        <Route exact path="/" element={<LandingPage/>}/>
