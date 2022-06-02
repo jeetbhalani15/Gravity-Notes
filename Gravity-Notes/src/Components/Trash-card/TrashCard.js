@@ -3,6 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { useAuth } from "../../Contexts/Auth-context";
 import { useNotes } from "../../Contexts/NotesAction-context";
 import { addNoteHandler } from "../../Utils/AddNote";
+import toast from "react-hot-toast";
 
 export const TrashCard = ({trash})=>{
     
@@ -11,11 +12,13 @@ export const TrashCard = ({trash})=>{
 
     const deleteFromTrash = (note)=>{
         noteDispatch({type:"DELETE_FROM_TRASH", payload: note})
+        toast.success('Note deleted!')
 
     };
     const restoreFromTrash = (e,note)=>{
         addNoteHandler(e,note,setNote,noteDispatch,authState)
         noteDispatch({type:"DELETE_FROM_TRASH", payload: note})
+        toast.success('Note Restored sucessfully!')
 
     }
         

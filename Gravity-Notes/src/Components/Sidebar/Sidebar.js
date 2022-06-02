@@ -38,7 +38,7 @@ export const Sidebar = ()=>{
                 <span className={`tag ${darkTheme ? "light-txt" : null}`}>Notes</span><span className="badge">{noteState.notes.length}</span>
                
             </li>
-            <li className="item unused-btn">
+            {/* <li className="item unused-btn">
                 <button className="sidebar-btn" ><a href="#"><FaRegBell size={30}/></a></button>
                 <span className={`tag ${darkTheme ? "light-txt" : null}`}>Reminders</span>
             </li>
@@ -50,7 +50,7 @@ export const Sidebar = ()=>{
             <li className="item unused-btn">
                 <button className="sidebar-btn" ><a href="#"><BiTagAlt size={30}/></a></button>
                 <span  className={`tag ${darkTheme ? "light-txt" : null}`}>String</span>
-            </li>
+            </li> */}
             <li className="item">
                 <Link to="/label"><button className="sidebar-btn" ><a href="#"><BsTags size={30}/></a></button>
                 </Link>

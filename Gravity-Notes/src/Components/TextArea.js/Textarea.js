@@ -16,12 +16,13 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./Textarea.css";
 import { Filter } from "../Filters/Filter";
+import toast from "react-hot-toast";
 import { useTheme } from "../../Contexts/Theme-context";
 
 export const Textarea = () => {
   const { authState } = useAuth();
   const {darkTheme}= useTheme();
-  const { noteState, noteDispatch, note, setNote, filter, setFilter } = useNotes();
+  const { noteState, noteDispatch, note, setNote, searchQuery } = useNotes();
   const [isExpanded, setisExpanded] = useState(false);
   const [colorSelector, setColorSelector] = useState(false);
   const [showLabel, setShowLabel] = useState(false);
@@ -30,6 +31,9 @@ export const Textarea = () => {
   let tempTag = "";
   const date = new Date();
   const time = date.getTime();
+
+  const searchResult = noteState.notes.filter((note)=> note.title.toLowerCase().includes(searchQuery?.toLowerCase().trim()))
+
 
   const inputHandler = (e) => {
     setNote((pre) => ({
@@ -40,11 +44,13 @@ export const Textarea = () => {
     }));
   };
 
+  //  Color Selector
   const userColorSelector = (color) => {
     setNote((pre) => ({ ...pre, color: color }));
     setColorSelector(false)
   };
 
+  // toggle for color selector
   const showColorSelector = (note) => {
     setColorSelector((pre) => !pre);
   };
@@ -57,17 +63,21 @@ export const Textarea = () => {
     setisExpanded(true);
     console.log("hi");
   };
+
+  // add edit notes
   const submitHandler = (e) => {
     // setisExpanded(false)
     e.preventDefault();
     note.flag
       ? editNote(note, authState, noteDispatch, setNote)
-      : addNoteHandler(e, note, setNote, noteDispatch, authState);
+         
+      : addNoteHandler(e, note, setNote, noteDispatch, authState)
   };
   const quillHander = (e) => {
     setNote((pre) => ({ ...pre, content: e }));
   };
 
+  // add tags
   const addTagsInArray = (tag)=>{
      if(itemsInTags.find(item => item === tag)) {
      itemsInTags = itemsInTags.filter(item => item !== tag)
@@ -76,15 +86,19 @@ export const Textarea = () => {
      }
     }
 
+    // tag input
     const tagInputHandler =(e)=>{
       tempTag = e.target.value
     }
 
+    // add tag to card
     const addTagToCard =()=>{
       tempTag && itemsInTags.push(tempTag)
       setNote(pre => ({...pre, tags: itemsInTags}))
+      toast.success('label Added to the notes!');
       setShowLabel(false)
     }
+
     const toggleFilter = ()=>{
       setShowFilter(pre => !pre)
     }
@@ -302,7 +316,7 @@ export const Textarea = () => {
         </>
       ) : (
         <>
-          {noteState.notes.map((item) => (
+          {searchResult.map((item) => (
             <Notecard key={item._id} note={item} />
           ))}
         </>

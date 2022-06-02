@@ -6,6 +6,7 @@ import logo from "../../../Assets/Images/hero-logo.png"
 import { useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 import { useAuth } from "../../../Contexts/Auth-context";
+import toast from "react-hot-toast";
 import axios from "axios";
 
 
@@ -54,10 +55,9 @@ export function Login() {
       localStorage.setItem("token", userData.data.encodedToken);
       authDispatch({ type: "LOG_IN", payload: userData.data.encodedToken });
       navigate("/home");
-      alert("logged in");
+      toast.success('Login Successfully!');
     } catch (error) {
-      alert(error);
-      console.log(error);
+      toast.error('Something went wrong!');
     }
   };
   return (
