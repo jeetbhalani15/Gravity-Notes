@@ -29,8 +29,7 @@
     width: 9rem;
     padding: 6px;
     border: none;
-    border-bottom: 2px solid grey;
-    
+    border-bottom: 2px solid grey; 
 }
 .label-input:active{
     border: none;

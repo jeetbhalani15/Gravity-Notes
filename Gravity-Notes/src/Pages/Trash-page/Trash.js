@@ -22,7 +22,7 @@ export const Trash = () => {
               </h1>
             </div>
           </div>
-          {noteState.trashNotes.length === 0 && authState.token === null ? (
+          {noteState.trashNotes.length === 0 ? (
             <>
               <div className="no-note-txt">
                 <VscTrash color="grey" size={175} />

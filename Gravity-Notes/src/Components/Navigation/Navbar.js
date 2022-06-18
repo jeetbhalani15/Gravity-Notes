@@ -37,8 +37,8 @@ export const Navbar = ()=>{
   }
     return(
         <>
-        <div className='header'>
-            <button className='nav-btn widget3'><a href="#"><FcMenu size={30}/></a></button>
+        <div className='header' style={{backgroundColor: darkTheme ? "#222223" : null }}>
+            <button className='nav-btn widget3'><FcMenu size={30}/></button>
             <div className="hero-logo">
           <div className="logo-mg">
             <img className="logo-img" src={logo} alt="logo" />
@@ -59,12 +59,12 @@ export const Navbar = ()=>{
             <div className="widgets">
               {darkTheme 
               ? (
-                 <div className="refresh my-3"><button className='nav-btn' onClick={()=>toggleDarkMode()} > <a href="#"> <MdDarkMode  size={30}/></a></button></div>
+                 <div className="refresh my-3"><button className='nav-btn' onClick={()=>toggleDarkMode()} > <a href="#"> <MdDarkMode color={"grey"}  size={30}/></a></button></div>
               )
-              : ( <div className="refresh my-3"><button className='nav-btn' onClick={()=>toggleDarkMode()} > <a href="#"> <FaSun  size={30}/></a></button></div>) 
+              : ( <div className="refresh my-3"><button className='nav-btn' onClick={()=>toggleDarkMode()} > <a href="#"> <FaSun color={"grey"}  size={30}/></a></button></div>) 
               }
                
-                <div className="view my-3 "><button className='nav-btn'><a href="#"><MdGridView size={30}/></a></button></div>
+                {/* <div className="view my-3 "><button className='nav-btn'><MdGridView size={30}/></button></div> */}
                 {/* <div className="settings my-3 "><button className='nav-btn'><a href="#"><IoSettingsOutline size={30}/></a></button></div> */}
             </div>
 
@@ -73,9 +73,9 @@ export const Navbar = ()=>{
 
                 {authState.token === null 
                 ? 
-                 <div className="logout flex"><Link to={"/login"}><button className='nav-btn'><a href="#"><AiOutlineLogout size={30}/></a></button></Link><spank  className={darkTheme ? "nav-btn-txt" : null} >Log In</spank></div> 
+                 <div className="logout flex"><Link to={"/login"}><button className='nav-btn'><AiOutlineLogout color={"grey"} size={30}/></button></Link><spank  className={darkTheme ? "nav-btn-txt" : null} >Log In</spank></div> 
                :
-                <div className="logout flex"><Link to={"/logout"}><button onClick={()=> logOutHandler()} className='nav-btn'><a href="#"><AiOutlineLogout size={30}/></a></button></Link><span  className={darkTheme ? "nav-btn-txt" : null}>Log Out</span></div>
+                <div className="logout flex"><Link to={"/logout"}><button onClick={()=> logOutHandler()} className='nav-btn'><AiOutlineLogout color={"grey"} size={30}/></button></Link><span  className={darkTheme ? "nav-btn-txt" : null}>Log Out</span></div>
                 }
                 
             </div>

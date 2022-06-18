@@ -316,9 +316,11 @@ export const Textarea = () => {
         </>
       ) : (
         <>
+        <div className="note-box">
           {searchResult.map((item) => (
             <Notecard key={item._id} note={item} />
           ))}
+          </div>
         </>
       )}
     </div>

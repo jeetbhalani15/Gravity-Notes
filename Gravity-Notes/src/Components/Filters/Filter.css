@@ -1,6 +1,6 @@
 .filter-box{
     position: absolute;
-    right: 3%;
+    right: 1%;
     top: 16%;
     width: 19rem;
     padding: 1.5rem;
@@ -9,6 +9,7 @@
     border-radius: 4px;
     color: #ff9945;
     font-weight: 500;
+    z-index: 9;
 }
 .filter-header{
     display: flex;

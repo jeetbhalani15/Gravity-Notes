@@ -1,164 +1,143 @@
 
 
 @media screen and (max-width: 860px) {
-    .header{
-        box-shadow: none;
-        margin-left: 2rem;
+    .textarea-form {
+        position: relative;
+        width: 30rem;
+        margin: 32px auto 50px auto;
+        background: #fff;
+        padding: 7px;
+        border-radius: 7px;
+        box-shadow: 0 1px 7px rgb(128 128 128);
     }
-    .filter-box {
-        position: absolute;
-        right: -50%;
-        top: 12%;
-        width: 19rem;
+    .note-box {
+        margin-top: 6rem;
+        width: 5rem;
+    }
+    .logout {
+        margin-left: 1rem;
     }
     .filter-btn {
-        position: absolute;
-        top: 4%;
-        right: -50%;
-        padding: 0.8rem 5rem;
-        border-radius: -4px;
-        border-radius: 11px;
-        border: none;
+      display: none;
     }
-    .lable-container {
-        position: absolute;
-        bottom: 53%;
-        right: 54%;
+    .no-note-txt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12rem;
+        margin-right: 1rem;
+        opacity: 0.3;
     }
-    .color-box {
-        position: absolute;
-        bottom: 42.5%;
-        right: 14.5%;
-    }
-    .content {
-        margin-left: 4rem;
-        width: 86rem;
-        /* min-height: 136vh; */
-    }
-    .headermenu {
-        width: 6rem;
-    }
-    footer{
-        margin-left: 35rem;
+    .txt-editor-box{
+        margin-top: 1rem;
+        overflow-y: auto;
+        height: 35rem;
+        width: 34rem;
     }
   
 }
  @media screen and (max-width:660px) {
-    .lable-container {
-        position: absolute;
-        bottom: 53%;
-        right: 49%;
+    .header {
+        margin: 0px;
+        position: sticky;
+        top: 0%;
+        z-index: 10;
+        background-color: white;
+        padding: 10px 20px;
+        box-shadow: 0 0 2px 0 rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-self: center;
+        align-items: center;
     }
-    
-    .color-box {
-        position: absolute;
-        bottom: 42.5%;
-        right: -3.5%;
+    .widgets{
+        display: none;
     }
-    .filter-btn {
-        position: absolute;
-        top: 21%;
-        right: -92%;
+    .logout {
+        margin-left: 4rem;
+        font-size: 14px;
     }
-    .filter-box {
-        position: absolute;
-        right: -93%;
-        top: 31%;
-        width: 19rem;
+    .label-list {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: #d8d7d654;
+        justify-content: space-around;
+        bottom: 1%;
+        z-index: 9;
+    }
+    .txt-editor-box{
+        margin-top: 1rem;
+        overflow-y: auto;
+        height: 35rem;
+        width: 34rem;
     }
     footer {
-        margin-left: 37rem;
-        width: 24rem;
+        display: none;
     }
-    .body-content {
-        display: grid;
-        grid-template-columns: 2rem 94rem;
-    }    
  }
 
  @media screen and (max-width:429px) {
-    .search {
-        display: none;
-      
-    }
-    .widgets {
-      display: none;
-    }
-    .header {
-     gap: 46rem;
-     margin-left: 4rem;
-    }
-    .unused-btn{
-        display: none;
-    }
-    .filter-box {
-        position: absolute;
-        right: 27%;
-        top: 91%;
-        width: 22rem;
-        font-size: 1.5rem;
-    }
-    .filter-btn {
-        top: 45%;
-        right: 78%;
+    .label-list {
         position: fixed;
-    }
-    .headermenu{
-        margin-top: 4rem;
-        width: 8rem;
-        font-size: 4rem;
-    }
-    .txt-editor-box {
-        margin-top: 2rem;
-        width: 42rem;
-    }
-    .note h1 {
-        font-size: 1.5rem;
-        margin-bottom: 6px;
-    }
-    .ql-editor {
-        font-size: 1.5rem;
-    }
-    .note p {
-        font-size: 1.5rem;
-    }
-    .textarea-form input {
-        font-size: 1.5rem;
-    }
-    .small-txt {
+        bottom: 1%;
         display: flex;
-        font-size: 2rem;
-        flex-flow: row-reverse;
-        color: #feb24c;
+        flex-direction: row;
+        gap: 5rem;
+        z-index: 9;
     }
-    .widgets2 {
-        display: flex;
-        display: flex;
-        gap: 1rem;
-        margin-left: 13rem;
-        font-size: 1.5rem;
+    .logout {
+        margin-left: 14rem;
+        font-size: 14px;
     }
-    .flex {
+    .content {
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        width: 8rem;
     }
-    .logo-txt {
-        font-size: 2.3rem;
-        margin-left: -2rem;
+  .txt-editor-box{
         margin-top: 1rem;
+        overflow-y: auto;
+        height: 75rem;
+        width: 34rem;
+  }
+    .note-box {
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
     }
-    .lable-container {
-        position: absolute;
-        bottom: 53%;
-        right: 22%;
+    .note {
+        width: 25.5rem;
     }
-    .color-box {
-        position: absolute;
-        bottom: 42.5%;
-        right: -58.5%;
+    .search input {
+        padding: 4px;
+        padding-left: 18px;
+        font-size: 13px;
+        width: 14rem;
+        border-radius: 10px;
+        border: none;
+        background-color: #F1F3F4;
+        outline: none;
     }
-    
+    .search-btn {
+        padding: 0.625rem;
+        border-radius: 12px;
+        background-color: #F1F3F4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0rem;
+    }
+    .filter-btn {
+        display: none;
+      }
+      footer {
+        display: none;
+    } 
+
 }

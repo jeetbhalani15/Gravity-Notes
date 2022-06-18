@@ -24,7 +24,7 @@ export const Archive = () => {
               </h1>
             </div>
           </div>
-          {noteState.archives.length === 0 && authState.token === null ? (
+          {noteState.archives.length === 0 ? (
             <>
               <div className="no-note-txt">
                 <MdOutlineArchive color="grey" size={175} />

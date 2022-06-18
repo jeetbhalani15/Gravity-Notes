@@ -257,8 +257,15 @@
  
 }
   @media screen and (max-width: 430px) {
+    .background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--login-background-color);
+  }
     .login-content {
-      width: 20rem;
+      width: 32rem;
       margin-top: -3rem;
       font-size: .9rem;
     }
@@ -272,7 +279,7 @@
     margin: 0;
     outline: 0;
     cursor: pointer;
-    width: 13rem;
+    width: 25rem;
     font-size: 1.2rem;
     padding: 1rem;
 }
@@ -285,6 +292,12 @@
   vertical-align: middle;
   margin-top: 1rem;
   margin-left: 1rem;
+}
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
  
 }

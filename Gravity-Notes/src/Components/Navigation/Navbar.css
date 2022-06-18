@@ -1,8 +1,13 @@
 .header{
-    margin: auto -10px;
-    padding: 10px 20px;
+    margin: 0px;
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+    background-color: white;
+    padding: 3px 20px;
     box-shadow: 0 0 2px 0 rgb(144, 144, 144);
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     align-self: center;
     align-items: center;
@@ -50,29 +55,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 14rem;
 }
 .search input{
     padding: 4px;
     padding-left: 18px;
     font-size: 18px;
-    width: 27rem;
+    width: 18rem;
     border-radius: 10px;
     border: none;
     background-color: #F1F3F4;
     outline: none;
 }
 .search button{
-    /* padding: 18px; */
     font-size: large;
     border-radius: 15px;
     border: none;
-    /* background-color: #F1F3F4; */
 }
-.widgets{
-    display: flex;
-    margin-left: 12%;
-}
+
 .my-3{
     margin: auto 12px;
 }
@@ -96,12 +95,7 @@
     border: none;
     background: transparent;
 }
-.widgets2{
-    display: flex;
-    display: flex;
-    gap: 4rem;
-    margin-left: 8rem;
-}
+
 .menu{
     display: flex;
     align-items: center;
@@ -134,7 +128,9 @@ a:hover {
  color: white;
 }
 .headermenu{
-    width: 5rem;
+    position: absolute;
+    width: 4rem;
+
 }
 .headermenu div{
     /* background: #f88651; */
@@ -167,10 +163,9 @@ a:hover {
 .headermenu button:hover{
     transform: scale(1.09);
 }
-.cardicon button:hover{
+.cardicon > button:hover{
     background: #ffffff;
     border-radius: 50%;
-    height:30px;
 }
 .flex{
     display: flex;

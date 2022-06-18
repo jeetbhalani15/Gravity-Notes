@@ -33,7 +33,7 @@ export const Sidebar = ()=>{
            <ul className="label-list">
             <li className="item">
                 <Link to={"/home"}>
-                <button className="sidebar-btn" ><a href="#"><MdOutlineLightbulb size={30}/></a></button>
+                <button className="sidebar-btn" ><MdOutlineLightbulb color={"grey"} size={30}/></button>
                 </Link>
                 <span className={`tag ${darkTheme ? "light-txt" : null}`}>Notes</span><span className="badge">{noteState.notes.length}</span>
                
@@ -52,7 +52,7 @@ export const Sidebar = ()=>{
                 <span  className={`tag ${darkTheme ? "light-txt" : null}`}>String</span>
             </li> */}
             <li className="item">
-                <Link to="/label"><button className="sidebar-btn" ><a href="#"><BsTags size={30}/></a></button>
+                <Link to="/label"><button className="sidebar-btn" ><BsTags color={"grey"} size={30}/></button>
                 </Link>
                 <span className={`tag ${darkTheme ? "light-txt" : null}`}>Tags</span><span className="badge">{note.tags.length}</span>
 
@@ -66,13 +66,13 @@ export const Sidebar = ()=>{
               
             <li className="item">
                 <Link to={"/archive"}>
-                <button className="sidebar-btn" ><a href="#"><MdOutlineArchive size={30}/></a></button>
+                <button className="sidebar-btn" ><MdOutlineArchive color={"grey"} size={30}/></button>
                 </Link>
                 <span  className={`tag ${darkTheme ? "light-txt" : null}`}>Achieve</span><span className="badge">{noteState.archives.length}</span>
             </li>
             <li className="item">
                 <Link to={"/trash"}>
-                <button className="sidebar-btn" ><a href="#"><VscTrash size={30}/></a></button>
+                <button className="sidebar-btn" ><VscTrash color={"grey"} size={30}/></button>
                 </Link>
                 <span className={`tag ${darkTheme ? "light-txt" : null}`}>Trash</span><span className="badge">{noteState.trashNotes.length}</span>
             </li>

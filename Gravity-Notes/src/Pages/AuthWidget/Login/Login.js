@@ -143,7 +143,7 @@ export function Login() {
                   Sign up now
                 </Link>
               </p>
-              <div className="guest-btn">
+              <div className="text--center">
                 <p
                   className="guest-login-btn"
                   onClick={(event) => {

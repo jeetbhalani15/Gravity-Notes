@@ -4,11 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 12rem;
-    width: 86rem;
+    margin-left: 9rem;
 }
 .body-content{
   position: relative;
-  display: grid;
-  grid-template-columns: 6rem 94rem;
 }
